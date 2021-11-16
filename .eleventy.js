@@ -1,5 +1,13 @@
-module.exports = (function (eleventyConfig) {
-    eleventyConfig.addFilter("filesize", function (path) {
-        return "0 KB";
-    });
-});
+module.exports = function (eleventyConfig) {
+  eleventyConfig.addPassthroughCopy('src/style.css');
+
+  return {
+    passthroughFileCopy: true,
+    dir: {
+      input: 'src',
+      includes: '_includes',
+      data: '_data',
+      output: '_site',
+    },
+  };
+};

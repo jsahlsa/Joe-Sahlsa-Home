@@ -6,26 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/style.css" />
     <!-- Grab title from the page data and dump it here -->
-    <title>Eleventy Demo</title>
+    <title>{{ title }}</title>
   </head>
   <body>
     <nav><a href="/">Home</a></nav>
     <!-- Grab the content from the page data, dump it here, and mark it as safe -->
     <!-- Safe docs: https://mozilla.github.io/nunjucks/templating.html#safe -->
-    
-<h1>Eleventy test</h1>
-<p>Let's try to make a blog</p>
-<ul>
-  
-  <li>
-    <a href="/blog/welcome_to_my_blog/">Welcome to my blog</a>
-  </li>
-  
-  <li>
-    <a href="/blog/blog_post_2/">Blog Post 2</a>
-  </li>
-  
-</ul>
-
+    {{ content | safe }}
   </body>
 </html>
