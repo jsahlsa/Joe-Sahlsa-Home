@@ -4,6 +4,7 @@ images:
     - parrot.gif
     - big-boss.gif
     - bert.gif
+    - ∞.gif
 ---    
 <!doctype html>
 <html>
@@ -14,11 +15,9 @@ images:
         <h1>{{ title }}</h1>
         <ul>
             {% for filename in images %}
-                <li><a href="img/{{ filename }}">{{ filename }}</a></li>
+                <li><a href="img/{{ filename | url_encode }}">{{ filename }}</a></li>
             {% endfor %}    
         </ul>
-        <li><a href="img/parrot.gif">parrot.gif</a></li>
-        <li><a href="img/big-boss.gif">big-boss.gif</a></li>
-        <li><a href="img/bert.gif">bert.gif</a></li>
+        
     </body>
 </html>
