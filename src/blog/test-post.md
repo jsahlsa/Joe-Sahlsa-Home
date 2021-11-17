@@ -4,6 +4,6 @@ title: Eleventy wont process post
 tags: [blog, git]
 ---
 
-# More good stuff
+# {{ title }}
 
-Do not put spaces in `tags` frontmatter content like this: `tags: blog git`, instead use an array like this `tags: [blog, git]`, capeesh?
+Do not put spaces in [YAML](https://yaml.org/) frontmatter `tags` like this: `tags: blog git`, instead use an array like this `tags: [blog, git]`, capeesh?

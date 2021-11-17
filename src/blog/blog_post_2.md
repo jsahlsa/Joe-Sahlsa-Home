@@ -4,6 +4,6 @@ title: Blog Post 2
 tags: blog
 ---
 
-# More good stuff
+# {{ title }}
 
 later…
