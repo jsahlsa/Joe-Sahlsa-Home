@@ -1,9 +1,11 @@
 ---
 layout: layout.njk
-title: Welcome to my blog
+title: Remove files added before .gitignore
 tags: blog
 ---
 
-# Welcome
+# {{ title }}
 
-My Thoughts.
+### Because this has frustrated me more than once
+
+I am going to write about my experience with this here after I get this site set up a bit better.
