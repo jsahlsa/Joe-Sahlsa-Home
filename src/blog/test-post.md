@@ -7,3 +7,5 @@ tags: [blog, git]
 # {{ title }}
 
 Do not put spaces in [YAML](https://yaml.org/) frontmatter `tags` like this: `tags: blog git`, instead use an array like this `tags: [blog, git]`, capeesh?
+
+This post would show up in `collections.blog` or `collections.git` because of its tags in the frontmatter. 
