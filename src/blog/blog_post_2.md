@@ -14,4 +14,6 @@ tags: blog
     - maybe more later, but baby steps
 - Make a style guide
     - different themes in the future
+    - keep things close to rendered `html`
 - Integrate [prism.js](https://prismjs.com/)
+- Make javascripts for section headers
