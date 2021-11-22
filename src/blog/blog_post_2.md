@@ -16,4 +16,6 @@ tags: blog
     - different themes in the future
     - keep things close to rendered `html`
 - Integrate [prism.js](https://prismjs.com/)
-- Make javascripts for section headers
+- Postcss
+    - Got it working (autoprefixer & cssnano), thanks to [5t3ph](https://github.com/5t3ph/11ty-netlify-jumpstart/blob/main/package.json)
+- Make javascripts for section header links

@@ -14,4 +14,4 @@ Do not put spaces in [YAML](https://yaml.org/) frontmatter `tags` like this: `ta
         - git
 ```
 
-In [Eleventy](https://www.11ty.dev) his post would show up in `collections.blog` or `collections.git` because of its tags in the frontmatter.
+In [Eleventy](https://www.11ty.dev) this post would show up in `collections.blog` or `collections.git` because of its tags in the frontmatter.
