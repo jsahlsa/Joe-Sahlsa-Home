@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx @11ty/eleventy --serve",
     "build": "npx @11ty/eleventy",
-    "postbuild": "postcss _site/*.css -u autoprefixer cssnano -r --no-map"
+    "lint": "stylelint 'src/*.css'",
+    "postbuild": "postcss _site/*.css -u autoprefixer cssnano postcss-preset-env -r --no-map"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,9 @@
     "cssnano": "^5.0.11",
     "postcss": "^8.3.11",
     "postcss-cli": "^9.0.2",
-    "prettier": "^2.4.1"
+    "postcss-preset-env": "^7.0.1",
+    "prettier": "^2.4.1",
+    "stylelint": "^14.1.0"
   },
   "dependencies": {
     "file-size": "^1.0.0"

@@ -1,12 +1,72 @@
+:root {
+  --primary-orange: hsl(26, 100%, 50%);
+  --orange-800: hsl(34, 100%, 50%);
+  --orange-700: hsl(38, 100%, 50%);
+  --orange-600: hsl(42, 100%, 50%);
+  --orange-500: hsl(45, 100%, 51%);
+  --orange-400: hsl(45, 100%, 58%);
+  --orange-300: hsl(46, 100%, 65%);
+  --orange-200: hsl(45, 100%, 75%);
+  --orange-100: hsl(45, 100%, 85%);
+  --orange-A700: hsl(40, 100%, 50%);
+  --teal-A400: hsl(165, 82%, 51%);
+  --teal-A700: hsl(172, 100%, 38%);
+  --text-black: #424242;
+  --text-white: #fafafa;
+  --orange-dark: hsl(26, 100%, 10%);
+  /* custom properties for fluid tye */
+  --step--4: clamp(0.63rem, 0.64rem + -0.02vw, 0.61rem);
+  --step--3: clamp(0.76rem, 0.76rem + 0.01vw, 0.77rem);
+  --step--2: clamp(0.91rem, 0.90rem + 0.05vw, 0.96rem);
+  --step--1: clamp(1.09rem, 1.07rem + 0.11vw, 1.20rem);
+  --step-0: clamp(1.31rem, 1.27rem + 0.20vw, 1.50rem);
+  --step-1: clamp(1.58rem, 1.51rem + 0.32vw, 1.88rem);
+  --step-2: clamp(1.89rem, 1.79rem + 0.49vw, 2.34rem);
+  --step-3: clamp(2.27rem, 2.13rem + 0.72vw, 2.93rem);
+  --step-4: clamp(2.72rem, 2.52rem + 1.02vw, 3.66rem);
+  --step-5: clamp(3.27rem, 2.98rem + 1.42vw, 4.58rem);
+  --step-6: clamp(3.92rem, 3.53rem + 1.95vw, 5.72rem);
+  --step-7: clamp(4.70rem, 4.17rem + 2.65vw, 7.15rem);
+}
+
 h1 {
-  color: blueviolet;
+  color: var(--primary-orange);
+  font-size: var(--step-5);
+  max-width: 15ch;
+}
+
+h2 {
+  color: var(--orange-800);
+  font-size: var(--step-2);
 }
 
 html {
   font-family: system-ui, -apple-system, '.SFNSText-Regular', 'San Francisco',
     'Roboto', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif;
+  color: var(--text-black);
+  background: var(--text-white);
 }
 
-pre, code {
-  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+pre,
+code {
+  font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
+    'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
+    'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
+    monospace;
+}
+
+.theme-color {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.primary-light {
+  background: var(--primary-orange);
+}
+
+.secondary-light {
+  background: var(--teal-A700);
 }
