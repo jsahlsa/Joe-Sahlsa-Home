@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'RecVar';
+  font-style: oblique 0deg 15deg;
+  font-weight: 300 1000;
+  font-display: swap;
+  src: url('fonts/Recursive_VF_1.078--subset_range_english_basic.woff2')
+    format('woff2');
+  unicode-range: U+0020-007F, U+00A9, U+2190-2193, U+2018, U+2019, U+201C,
+    U+201D, U+2022;
+}
 :root {
   --primary-orange: hsl(26, 100%, 50%);
   --orange-800: hsl(34, 100%, 50%);
@@ -17,22 +27,53 @@
   /* custom properties for fluid tye */
   --step--4: clamp(0.63rem, 0.64rem + -0.02vw, 0.61rem);
   --step--3: clamp(0.76rem, 0.76rem + 0.01vw, 0.77rem);
-  --step--2: clamp(0.91rem, 0.90rem + 0.05vw, 0.96rem);
-  --step--1: clamp(1.09rem, 1.07rem + 0.11vw, 1.20rem);
-  --step-0: clamp(1.31rem, 1.27rem + 0.20vw, 1.50rem);
+  --step--2: clamp(0.91rem, 0.9rem + 0.05vw, 0.96rem);
+  --step--1: clamp(1.09rem, 1.07rem + 0.11vw, 1.2rem);
+  --step-0: clamp(1.31rem, 1.27rem + 0.2vw, 1.5rem);
   --step-1: clamp(1.58rem, 1.51rem + 0.32vw, 1.88rem);
   --step-2: clamp(1.89rem, 1.79rem + 0.49vw, 2.34rem);
   --step-3: clamp(2.27rem, 2.13rem + 0.72vw, 2.93rem);
   --step-4: clamp(2.72rem, 2.52rem + 1.02vw, 3.66rem);
   --step-5: clamp(3.27rem, 2.98rem + 1.42vw, 4.58rem);
   --step-6: clamp(3.92rem, 3.53rem + 1.95vw, 5.72rem);
-  --step-7: clamp(4.70rem, 4.17rem + 2.65vw, 7.15rem);
+  --step-7: clamp(4.7rem, 4.17rem + 2.65vw, 7.15rem);
+  /* fonts */
+  --system-fonts-sans: system-ui, -apple-system, '.SFNSText-Regular',
+    'San Francisco', 'Roboto', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande',
+    sans-serif;
+  --system-fonts-mono: Consolas, 'Andale Mono WT', 'Andale Mono',
+    'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono',
+    'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', Monaco,
+    'Courier New', Courier, monospace;
+
+  --font-weight: 400;
+  --CASL: 0;
+  --MONO: 0;
+  --slnt: 0;
+  --CRSV: 0.5;
+}
+
+body {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 h1 {
   color: var(--primary-orange);
   font-size: var(--step-5);
   max-width: 15ch;
+  font-weight: var(--font-weight);
+  font-family: 'RecVar';
+  font-variation-settings: "MONO" var(--MONO), "CASL" var(--CASL),
+    "slnt" var(--slnt), "CRSV" var(--CRSV);
+  transition: 1s;
+}
+
+h1:hover {
+  font-weight: 1000;
+  --slnt: -15;
+  --MONO: 1;
 }
 
 h2 {
@@ -41,18 +82,14 @@ h2 {
 }
 
 html {
-  font-family: system-ui, -apple-system, '.SFNSText-Regular', 'San Francisco',
-    'Roboto', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif;
+  font-family: var(--system-fonts-sans);
   color: var(--text-black);
   background: var(--text-white);
 }
 
 pre,
 code {
-  font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
-    'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
-    'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
-    monospace;
+  font-family: var(--system-fonts-mono);
 }
 
 .theme-color {
