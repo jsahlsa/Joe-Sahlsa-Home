@@ -16,7 +16,7 @@ I have decided not to use any css libraries, I am only going to be using postcss
 
 For the base of my css I'll use a [modern reset](https://elad2412.github.io/the-new-css-reset/), and custom properties.
 
-As I continue to create this site I'll update this post, probably burning it wholesale ans restarting after I've come to the realization that it's all wrong.
+As I continue to create this site I'll update this post, probably burning it wholesale and restarting after I've come to the realization that it's all wrong.
 
 ## Color
 
@@ -37,4 +37,16 @@ I threw these into the [material design color tool](https://material.io/resource
 
 ## Typography
 
-I have not picked out a font family yet, but I know for sure that I wanted to use fluid typography, and [utopia](https://utopia.fyi/) has a great tool to generate it. They use the css [`clamp()`](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp()) property to adjust font size based on viewport width.
+I have not picked out a font family yet, but I know for sure that I want to use fluid typography, and [utopia](https://utopia.fyi/) has a great tool to generate it. They use the css [`clamp()`](<https://developer.mozilla.org/en-US/docs/Web/CSS/clamp()>) property to adjust font size based on viewport width.
+
+Yesterday I took some time and played with variable fonts. I may pick one to use for headers.
+
+## Code
+
+I think I'll go with Eleventy's own [syntaxHighlight](https://www.11ty.dev/docs/plugins/syntaxhighlight/) for my code blocks. I was going to use prism, and theirs uses prism with configuration options. At some point I'd like to customize it to match my site. Lets run some test code to see how the defaults look:
+
+``` js
+const add = (a, b) => {
+  return a + b;
+};
+```

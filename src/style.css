@@ -64,16 +64,16 @@ h1 {
   font-size: var(--step-5);
   max-width: 15ch;
   font-weight: var(--font-weight);
-  font-family: 'RecVar';
-  font-variation-settings: "MONO" var(--MONO), "CASL" var(--CASL),
-    "slnt" var(--slnt), "CRSV" var(--CRSV);
+  font-family: 'RecVar', var(--system-fonts-sans);
+  font-variation-settings: 'MONO' var(--MONO), 'CASL' var(--CASL),
+    'slnt' var(--slnt), 'CRSV' var(--CRSV);
   transition: 1s;
 }
 
 h1:hover {
   font-weight: 1000;
-  --slnt: -15;
-  --MONO: 1;
+  --CASL: 1;
+  --CRSV: 0.75;
 }
 
 h2 {
