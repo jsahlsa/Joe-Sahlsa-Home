@@ -87,11 +87,26 @@ html {
   background: var(--text-white);
 }
 
+a {
+  color: #008e76;
+  text-decoration: none;
+  padding: 0 0 0.1rem 0;
+  box-shadow: #008e76 0 2px;
+  transition: box-shadow 0.2s ease-out;
+}
+
+a:hover {
+  padding: 0 0 0.2rem 0;
+}
+
 pre,
 code {
   font-family: var(--system-fonts-mono);
 }
 
+code {
+  background: lightgray;
+}
 .theme-color {
   display: inline-block;
   width: 1rem;
@@ -106,4 +121,34 @@ code {
 
 .secondary-light {
   background: var(--teal-A700);
+}
+
+.highlight-line-add {
+  background: hsla(89, 100%, 30%, 0.7);
+  text-decoration: none;
+}
+.highlight-line-remove {
+  background: hsla(0, 100%, 50%, 0.5);
+  text-decoration: none;
+}
+
+pre[class*='language-'] {
+  padding-left: 0;
+}
+
+pre {
+  counter-reset: lineNumber;
+}
+code .highlight-line:before {
+  -webkit-user-select: none;
+  border-right: 1px solid #404040;
+  color: #fafafa;
+  content: counter(lineNumber);
+  counter-increment: lineNumber;
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+  margin-right: 1.2em;
+  padding-right: 1.2em;
+  text-align: right;
+  width: 2.4em;
 }

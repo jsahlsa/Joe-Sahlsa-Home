@@ -1,7 +1,9 @@
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(syntaxHighlight, {
+    alwaysWrapLineHighlights: true,
+  });
 
   eleventyConfig.addPassthroughCopy('src/style.css');
   eleventyConfig.addPassthroughCopy('src/index.js');

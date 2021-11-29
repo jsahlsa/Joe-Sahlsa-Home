@@ -45,8 +45,21 @@ Yesterday I took some time and played with variable fonts. I may pick one to use
 
 I think I'll go with Eleventy's own [syntaxHighlight](https://www.11ty.dev/docs/plugins/syntaxhighlight/) for my code blocks. I was going to use prism, and theirs uses prism with configuration options. At some point I'd like to customize it to match my site. Lets run some test code to see how the defaults look:
 
-``` js
+```js/2/1
 const add = (a, b) => {
+  return a - b;
   return a + b;
 };
 ```
+
+```css
+h1 {
+  font-family: RecVar, var(--stems-sans);
+}
+```
+
+```html
+<button class="candy button">eat me</button>
+```
+
+I decided I wanted line numbers too, but couldn't find a good solution in the documentation. Turns out this is a [github issue](https://github.com/11ty/eleventy-plugin-syntaxhighlight/issues/10?v=1.0.18). The solution by [@joshbuchea](https://github.com/joshbuchea) seems to work nicely. I'd just like to fix the excess space at the front. I'll try adjusting padding on the `pre` elements.
