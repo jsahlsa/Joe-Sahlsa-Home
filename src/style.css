@@ -184,6 +184,33 @@ html {
   line-height: 1.6;
 }
 
+ul {
+  list-style: decimal-leading-zero;
+  
+}
+
+.blog.posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 3rem;
+  padding: 3rem;
+}
+
+.blog.post {
+  border: var(--orange-600) solid 5px;
+  padding: 2rem;
+  position: relative;
+}
+
+.blog.post::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: #008e76 3px solid;
+  transform: translate(-190px, -3px);
+}
+
 a {
   color: #008e76;
   text-decoration: none;
@@ -247,4 +274,9 @@ code .highlight-line:before {
   padding-right: 1.2em;
   text-align: right;
   width: 2.4em;
+}
+
+/* prevent FOUC */
+html {
+  visibility: visible;
 }

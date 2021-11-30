@@ -4,9 +4,9 @@ layout: home.njk
 tags: pages
 ---
 
-<ul>
+<ul class="blog posts">
   {% for post in collections.blog %}
-  <li>
+  <li class="blog post">
     <a href="{{ post.url }}">{{ post.data.title }}</a>
   </li>
   {% endfor %}
