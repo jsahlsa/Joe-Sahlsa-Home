@@ -1,6 +1,6 @@
 ---
 title: blog
-layout: layout.njk
+layout: home.njk
 tags: pages
 ---
 

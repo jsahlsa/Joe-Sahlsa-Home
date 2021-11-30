@@ -1,5 +1,5 @@
 ---
-layout: layout.njk
+layout: home.njk
 title: Steps I am taking in building this
 tags: blog
 ---

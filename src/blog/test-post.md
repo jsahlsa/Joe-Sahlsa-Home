@@ -1,5 +1,5 @@
 ---
-layout: layout.njk
+layout: home.njk
 title: Eleventy wont process post
 tags: [blog, git]
 ---

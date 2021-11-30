@@ -1,5 +1,5 @@
 ---
-layout: layout.njk
+layout: home.njk
 title: Creating a style guide for this site
 tags: blog
 ---
