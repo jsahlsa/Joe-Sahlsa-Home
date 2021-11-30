@@ -3,6 +3,14 @@ layout: layout.njk
 title: Eleventy Demo
 ---
 
+<ul class="sitenav__navlist list-unstyled">
+  {%- for page in collections.pages -%}
+  <li>
+    <a href="{{ page.url }}">{{ page.data.title }}</a>
+  </li>
+  {%- endfor -%}
+</ul>
+
 <h1 class="main header">Joe Sahlsa</h1>
 <h2 class="main subhead">Let's try to make a blog</h2>
 <ul>
