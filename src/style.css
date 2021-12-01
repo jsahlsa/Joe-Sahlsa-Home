@@ -129,14 +129,113 @@
     'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono',
     'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', Monaco,
     'Courier New', Courier, monospace;
-
-  --font-weight: 800;
-  --CASL: 0;
-  --MONO: 0;
-  --slnt: 0;
-  --CRSV: 0.5;
 }
 
+/* Reset elements taken from Elad Schecter, Andy Bell, and Josh Comeau */
+/*** The new CSS Reset - version 1.2.0 (last updated 23.7.2021) ***/
+
+/* Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  Remove list styles (bullets/numbers)
+  in case you use it with normalize.css
+*/
+ol,
+ul {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Global Styles */
+
+html {
+  font-family: var(--system-fonts-sans);
+  line-height: 1.6;
+}
+
+a,
+input[type='radio'],
+input[type='checkbox'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+h1 {
+  font-family: RecVar, var(--system-fonts-mono);
+  font-weight: 800;
+  font-size: var(--step-5);
+  width: 15ch;
+  line-height: var(--space-2xl);
+  color: var(--orange-A700);
+}
+
+/* saving these styles for later maybe
 body {
   max-width: 800px;
   width: 100%;
@@ -203,8 +302,10 @@ ul {
 }
 
 .blog.post::after {
+  all: unset;
   content: '';
   position: absolute;
+  
   width: 100%;
   height: 100%;
   border: #008e76 3px solid;
@@ -275,6 +376,7 @@ code .highlight-line:before {
   text-align: right;
   width: 2.4em;
 }
+*/
 
 /* prevent FOUC */
 html {
