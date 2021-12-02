@@ -1,5 +1,5 @@
 ---
-layout: layout.njk
+layout: home.njk
 title: Remove files added before .gitignore
 tags: blog
 ---

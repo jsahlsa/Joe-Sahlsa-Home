@@ -21,6 +21,7 @@
   --orange-A700: hsl(40, 100%, 50%);
   --teal-A400: hsl(165, 82%, 51%);
   --teal-A700: hsl(172, 100%, 38%);
+  --teal-dark: #008e76;
   --text-black: #424242;
   --text-white: #fafafa;
   --orange-dark: hsl(26, 100%, 10%);
@@ -129,6 +130,7 @@
     'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono',
     'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', Monaco,
     'Courier New', Courier, monospace;
+  --system-fonts-serif: font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
 }
 
 /* Reset elements taken from Elad Schecter, Andy Bell, and Josh Comeau */
@@ -214,8 +216,11 @@ select {
 /* Global Styles */
 
 html {
-  font-family: var(--system-fonts-sans);
-  line-height: 1.6;
+  font-family: var(--system-fonts-serif);
+  line-height: var(--space-s);
+  font-size: var(--step-0);
+  color: var(--orange-dark);
+  background: var(--orange-100);
 }
 
 a,
@@ -226,12 +231,41 @@ button {
   cursor: pointer;
 }
 
+a {
+  color: var(--teal-dark);
+  box-shadow: 0 2px var(--teal-dark);
+}
+
+p {
+  margin-top: 1rem;
+  text-indent: 2ch;
+}
+
+ul, ol {
+  list-style: revert;
+  padding: revert;
+}
+
+pre, code {
+  font-family: var(--system-fonts-mono);
+  font-size: var(--step--2);
+}
+
+/* set width of all pages except landing */
+.home {
+  max-width: 60ch;
+  margin: 0 auto;
+  width: 90%;
+}
+
+/* for all h1s except landing */
 h1 {
   font-family: RecVar, var(--system-fonts-mono);
   font-weight: 800;
-  font-size: var(--step-5);
-  width: 15ch;
-  line-height: var(--space-2xl);
+  font-size: var(--step-4);
+  max-width: 15ch;
+  width: 90%;
+  line-height: var(--space-xl);
   color: var(--orange-A700);
 }
 
