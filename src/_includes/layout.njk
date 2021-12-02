@@ -5,26 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- CSS only -->
-    <style>
-      html {
-        visibility: hidden;
-      }
-    </style>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/style.css" />
-    
+
     <!-- Grab title from the page data and dump it here -->
     <title>{{ title }}</title>
   </head>
   <body class="line-numbers">
     <!-- Grab the content from the page data, dump it here, and mark it as safe -->
     <!-- Safe docs: https://mozilla.github.io/nunjucks/templating.html#safe -->
-    
-      {{ content | safe }}
-    
+
+    {{ content | safe }}
+
     <script src="/index.js" defer></script>
   </body>
 </html>

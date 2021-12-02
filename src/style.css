@@ -18,6 +18,7 @@
   --orange-300: hsl(46, 100%, 65%);
   --orange-200: hsl(45, 100%, 75%);
   --orange-100: hsl(45, 100%, 85%);
+  --amber: hsl(46, 100%, 94%);
   --orange-A700: hsl(40, 100%, 50%);
   --teal-A400: hsl(165, 82%, 51%);
   --teal-A700: hsl(172, 100%, 38%);
@@ -25,6 +26,16 @@
   --text-black: #424242;
   --text-white: #fafafa;
   --orange-dark: hsl(26, 100%, 10%);
+  --Gray-50: #fafafa;
+  --Gray-100: #f5f5f5;
+  --Gray-200: #eeeeee;
+  --Gray-300: #e0e0e0;
+  --Gray-400: #bdbdbd;
+  --Gray-500: #9e9e9e;
+  --Gray-600: #757575;
+  --Gray-700: #616161;
+  --Gray-800: #424242;
+  --Gray-900: #212121;
   /* custom properties for fluid tye */
   --step--4: clamp(0.63rem, 0.64rem + -0.02vw, 0.61rem);
   --step--3: clamp(0.76rem, 0.76rem + 0.01vw, 0.77rem);
@@ -130,7 +141,18 @@
     'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono',
     'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', Monaco,
     'Courier New', Courier, monospace;
-  --system-fonts-serif: font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+  --system-fonts-serif: 'Palatino Linotype', Palatino, Palladio,
+    'URW Palladio L', 'Book Antiqua', Baskerville, 'Bookman Old Style',
+    'Bitstream Charter', 'Nimbus Roman No9 L', Garamond, 'Apple Garamond',
+    'ITC Garamond Narrow', 'New Century Schoolbook', 'Century Schoolbook',
+    'Century Schoolbook L', Georgia, serif;
+}
+
+:root {
+  --casl: 'CASL' 0;
+  --mono: 'MONO' 0;
+  --crsv: 'CRSV' 0;
+  --slnt: 'slnt' 0;
 }
 
 /* Reset elements taken from Elad Schecter, Andy Bell, and Josh Comeau */
@@ -220,7 +242,7 @@ html {
   line-height: var(--space-s);
   font-size: var(--step-0);
   color: var(--orange-dark);
-  background: var(--orange-100);
+  background: var(--amber);
 }
 
 a,
@@ -233,22 +255,39 @@ button {
 
 a {
   color: var(--teal-dark);
-  box-shadow: 0 2px var(--teal-dark);
+  text-decoration: underline 3px;
+  text-underline-offset: 6px;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+a:hover {
+  text-underline-offset: 8px;
 }
 
 p {
+  font-family: 'Aleo', var(--system-fonts-serif);
+  line-height: var(--space-s);
   margin-top: 1rem;
   text-indent: 2ch;
+  color: #424242;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: revert;
   padding: revert;
 }
 
-pre, code {
+pre,
+code {
   font-family: var(--system-fonts-mono);
   font-size: var(--step--2);
+}
+
+code {
+  background: var(--Gray-200);
+  padding: 0.1rem;
+  border-radius: 5px;
 }
 
 /* set width of all pages except landing */
@@ -259,14 +298,69 @@ pre, code {
 }
 
 /* for all h1s except landing */
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: RecVar, var(--system-fonts-mono);
+  font-variation-settings: var(--mono), var(--casl), var(--crsv), var(--slnt);
+}
+
+h1 {
+  --mono: 'MONO' 0.3;
+  --crsv: 'CRSV' 1;
+  --casl: 'CASL' 0.4;
   font-weight: 800;
   font-size: var(--step-4);
   max-width: 15ch;
   width: 90%;
   line-height: var(--space-xl);
   color: var(--orange-A700);
+  transition: all 0.3s ease-in-out;
+}
+
+h1:hover {
+  --mono: 'MONO' 1;
+  
+  font-weight: 900;
+}
+
+h2 {
+  --casl: 'CASL' 0.5;
+  font-weight: 800;
+  font-size: var(--step-2);
+  line-height: var(--space-l);
+  color: var(--orange-600);
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+}
+
+.sitenav__container {
+  padding: 1rem;
+  display: flex;
+  margin: 0 auto;
+  width: clamp(16rem, 93vw, 75rem);
+  position: relative;
+}
+
+.sitenav__container > ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 auto;
+  gap: 0 clamp(1.09rem, 1rem + 0.47vw, 1.33rem);
+}
+.sitenav__container > ul > li > a {
+  --mono: 0;
+  --casl: 0.5;
+  font-variation-settings: 'MONO' var(--mono), 'CASL' var(--casl);
+  font-weight: 700;
+  font-family: RecVar, var(--system-fonts-mono);
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 /* saving these styles for later maybe
