@@ -3,9 +3,13 @@ layout: layout.njk
 title: Eleventy Demo
 ---
 
-{% include 'nav.njk' %}
+<div class="landing-wrapper">
+  <header>{% include 'nav.njk' %}</header>
 
-<main class="landing main">
-  <h1 class="main header">Joe Sahlsa</h1>
-  <h2 class="main subhead">Let's try to make a blog</h2>
-</main>
+  <main class="landing main">
+    <div class="landing header-wrapper">
+      <h1 class="main header">Joe Sahlsa</h1>
+      <h2 class="main subhead">Let's try to make a blog</h2>
+    </div>
+  </main>
+</div>

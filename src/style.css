@@ -112,6 +112,10 @@
     ((var(--fc-s-min) / 16) * 1rem) + (var(--fc-s-max) - var(--fc-s-min)) *
       var(--fluid-bp)
   );
+  --space-s-m: calc(
+    ((var(--fc-s-min) / 16) * 1rem) + (var(--fc-s-max) - var(--fc-s-min)) *
+      var(--fluid-bp)
+  );
   --space-m: calc(
     ((var(--fc-m-min) / 16) * 1rem) + (var(--fc-m-max) - var(--fc-m-min)) *
       var(--fluid-bp)
@@ -130,6 +134,40 @@
   );
   --space-3xl: calc(
     ((var(--fc-3xl-min) / 16) * 1rem) + (var(--fc-3xl-max) - var(--fc-3xl-min)) *
+      var(--fluid-bp)
+  );
+
+  /* One-up pairs */
+  --space-3xs-2xs: calc(
+    ((var(--fc-3xs-min) / 16) * 1rem) + (var(--fc-2xs-max) - var(--fc-3xs-min)) *
+      var(--fluid-bp)
+  );
+  --space-2xs-xs: calc(
+    ((var(--fc-2xs-min) / 16) * 1rem) + (var(--fc-xs-max) - var(--fc-2xs-min)) *
+      var(--fluid-bp)
+  );
+  --space-xs-s: calc(
+    ((var(--fc-xs-min) / 16) * 1rem) + (var(--fc-s-max) - var(--fc-xs-min)) *
+      var(--fluid-bp)
+  );
+  --space-s-m: calc(
+    ((var(--fc-s-min) / 16) * 1rem) + (var(--fc-m-max) - var(--fc-s-min)) *
+      var(--fluid-bp)
+  );
+  --space-m-l: calc(
+    ((var(--fc-m-min) / 16) * 1rem) + (var(--fc-l-max) - var(--fc-m-min)) *
+      var(--fluid-bp)
+  );
+  --space-l-xl: calc(
+    ((var(--fc-l-min) / 16) * 1rem) + (var(--fc-xl-max) - var(--fc-l-min)) *
+      var(--fluid-bp)
+  );
+  --space-xl-2xl: calc(
+    ((var(--fc-xl-min) / 16) * 1rem) + (var(--fc-2xl-max) - var(--fc-xl-min)) *
+      var(--fluid-bp)
+  );
+  --space-2xl-3xl: calc(
+    ((var(--fc-2xl-min) / 16) * 1rem) + (var(--fc-3xl-max) - var(--fc-2xl-min)) *
       var(--fluid-bp)
   );
 
@@ -242,7 +280,7 @@ html {
   line-height: var(--space-s);
   font-size: var(--step-0);
   color: var(--orange-dark);
-  background: var(--amber);
+  background: var(--Gray-50);
 }
 
 a,
@@ -256,7 +294,7 @@ button {
 a {
   color: var(--teal-dark);
   text-decoration: underline 3px;
-  text-underline-offset: 6px;
+  text-underline-offset: 3px;
   transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -266,10 +304,11 @@ a:hover {
 
 p {
   font-family: 'Aleo', var(--system-fonts-serif);
-  line-height: var(--space-s);
+  line-height: 1.7;
   margin-top: 1rem;
-  text-indent: 2ch;
+
   color: #424242;
+  max-width: 60ch;
 }
 
 ul,
@@ -284,17 +323,23 @@ code {
   font-size: var(--step--2);
 }
 
+pre {
+  width: clamp(16rem, 93vw, 40rem);
+}
+
 code {
   background: var(--Gray-200);
   padding: 0.1rem;
   border-radius: 5px;
 }
 
+.cp_embed_wrapper {
+  width: clamp(16rem, 93vw, 40rem);
+}
 /* set width of all pages except landing */
 .home {
-  max-width: 60ch;
   margin: 0 auto;
-  width: 90%;
+  width: clamp(16rem, 93vw, 55rem);
 }
 
 /* for all h1s except landing */
@@ -315,20 +360,22 @@ h1 {
   font-weight: 800;
   font-size: var(--step-4);
   max-width: 15ch;
-  width: 90%;
+  
   line-height: var(--space-xl);
   color: var(--orange-A700);
   transition: all 0.3s ease-in-out;
+  max-width: 15ch;
 }
 
 h1:hover {
   --mono: 'MONO' 1;
-  
+
   font-weight: 900;
 }
 
 h2 {
   --casl: 'CASL' 0.5;
+  max-width: 20ch;
   font-weight: 800;
   font-size: var(--step-2);
   line-height: var(--space-l);
@@ -361,6 +408,26 @@ h2 {
   font-family: RecVar, var(--system-fonts-mono);
   text-decoration: none;
   text-transform: uppercase;
+}
+
+/* Landing page */
+
+.landing-wrapper {
+  height: 100vh;
+}
+
+.landing.main {
+  display: grid;
+  place-items: center;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.landing > h1 {
+  
+}
+.landing > h2 {
+  margin: 0;
 }
 
 /* saving these styles for later maybe
