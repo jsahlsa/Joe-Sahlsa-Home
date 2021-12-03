@@ -283,6 +283,10 @@ html {
   background: var(--Gray-50);
 }
 
+body {
+  overflow: hidden;
+}
+
 a,
 input[type='radio'],
 input[type='checkbox'],
@@ -307,7 +311,7 @@ p {
   line-height: 1.7;
   margin-top: 1rem;
 
-  color: #424242;
+  color: var(--Gray-800);
   max-width: 60ch;
 }
 
@@ -360,7 +364,7 @@ h1 {
   font-weight: 800;
   font-size: var(--step-4);
   max-width: 15ch;
-  
+
   line-height: var(--space-xl);
   color: var(--orange-A700);
   transition: all 0.3s ease-in-out;
@@ -414,20 +418,82 @@ h2 {
 
 .landing-wrapper {
   height: 100vh;
+  overflow: hidden;
+  width: clamp(16rem, 93vw, 75rem);
+  margin: 0 auto;
+  position: relative;
 }
 
 .landing.main {
   display: grid;
+  grid-template-columns: 1fr 1fr;
   place-items: center;
   margin: 0 auto;
   height: 100%;
 }
 
-.landing > h1 {
-  
+/* svg logo */
+.logo-fill {
+  fill: var(--orange-A700);
+  transition: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
-.landing > h2 {
+
+.bottom-logo:hover,
+.middle-logo:hover,
+.top-logo:hover {
+  fill: var(--teal-dark);
+}
+
+svg {
+  transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  padding: 0.2em;
+  border: 3px solid var(--orange-A700);
+}
+
+svg:hover {
+  transform: translateY(0.5rem);
+}
+
+/* specific element styling landing page */
+.landing h1 {
+  --casl: 'CASL' 0;
+  --crsv: 'CRSV' 0;
+  font-size: var(--step-6);
+  font-variation-settings: var(--mono), var(--crsv), var(--casl);
+}
+.landing h2 {
+  --casl: 'CASL' 1;
+  --mono: 'MONO' 0;
   margin: 0;
+  font-size: var(--step-1);
+  font-weight: 300;
+  font-variation-settings: var(--mono), var(--casl);
+  color: var(--Gray-800);
+}
+
+.landing-image {
+  position: absolute;
+  top: 0;
+  right: -10rem;
+  width: 30rem;
+  height: 100rem;
+  background-image: url(images/pipesweyes.svg);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  z-index: -1;
+  opacity: 0.3;
+}
+.landing-image.small {
+  position: absolute;
+  top: 0;
+  right: -23rem;
+  width: 30rem;
+  height: 100rem;
+  background-image: url(images/pipesweyes.svg);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  z-index: -1;
+  opacity: 0.3;
 }
 
 /* saving these styles for later maybe
