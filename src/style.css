@@ -283,9 +283,7 @@ html {
   background: var(--Gray-50);
 }
 
-body {
-  overflow: hidden;
-}
+
 
 a,
 input[type='radio'],
@@ -445,16 +443,20 @@ h2 {
 }
 
 svg {
-  transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   padding: 0.2em;
   border: 3px solid var(--orange-A700);
 }
 
 svg:hover {
-  transform: translateY(0.5rem);
+  transform: translateY(0.2rem);
 }
 
 /* specific element styling landing page */
+.landing-body {
+  overflow: hidden;
+}
+
 .landing h1 {
   --casl: 'CASL' 0;
   --crsv: 'CRSV' 0;
@@ -473,14 +475,14 @@ svg:hover {
 
 .landing-image {
   position: absolute;
-  bottom: 0;
+  bottom: 5rem;
   right: -10rem;
-  width: 30rem;
+  width: 40rem;
   height: 100rem;
   background-image: url(images/pipesweyes.svg);
   background-repeat: no-repeat;
   background-position: bottom;
-  overflow: hidden;
+ 
   z-index: -1;
   opacity: 0.3;
 }
@@ -497,6 +499,11 @@ svg:hover {
   overflow: hidden;
   z-index: -1;
   opacity: 0.3;
+}
+
+.blog-list.dates {
+  display: inline-block;
+  margin: 0;
 }
 
 /* saving these styles for later maybe
