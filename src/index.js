@@ -9,9 +9,4 @@ for (let i = 0; i < links.length; i++) {
   }
 }
 
-// adjust size of landing image based on window size
-if (width < 1200) {
-  landingImage.setAttribute('class', 'landing-image small');
-}
-
 console.log('hi');

@@ -283,8 +283,6 @@ html {
   background: var(--Gray-50);
 }
 
-
-
 a,
 input[type='radio'],
 input[type='checkbox'],
@@ -322,11 +320,11 @@ ol {
 pre,
 code {
   font-family: var(--system-fonts-mono);
-  font-size: var(--step--2);
 }
 
 pre {
   width: clamp(16rem, 93vw, 40rem);
+  font-size: 10px;
 }
 
 code {
@@ -341,7 +339,7 @@ code {
 /* set width of all pages except landing */
 .home {
   margin: 0 auto;
-  width: clamp(16rem, 93vw, 55rem);
+  max-width: clamp(16rem, 93vw, 55rem);
 }
 
 /* for all h1s except landing */
@@ -375,15 +373,26 @@ h1:hover {
   font-weight: 900;
 }
 
+/* different styles for subheads */
+h1 + h2 {
+  --slnt: -7;
+  font-size: var(--step-0);
+  font-weight: 300;
+  font-variation-settings: 'slnt' var(--slnt);
+  color: var(--Gray-800);
+  margin: 0;
+}
+
 h2 {
-  --casl: 'CASL' 0.5;
-  max-width: 20ch;
-  font-weight: 800;
+  --casl: 'CASL' 1;
+  --mono: 'MONO' 0;
+  width: clamp(10ch, 93vw, 30ch);
+  margin: 1.5rem 0 0.5rem 0;
   font-size: var(--step-2);
-  line-height: var(--space-l);
+  line-height: 1.2;
+  font-weight: 600;
+  font-variation-settings: var(--mono), var(--casl);
   color: var(--orange-600);
-  margin-bottom: 2rem;
-  margin-top: 3rem;
 }
 
 .sitenav__container {
@@ -482,28 +491,55 @@ svg:hover {
   background-image: url(images/pipesweyes.svg);
   background-repeat: no-repeat;
   background-position: bottom;
- 
-  z-index: -1;
-  opacity: 0.3;
-}
-.landing-image.small {
-  position: absolute;
-  bottom: 0;
-  right: -20rem;
-  width: 30rem;
-  height: 100rem;
-  background-image: url(images/pipesweyes.svg);
-  background-repeat: no-repeat;
-  background-position: bottom;
 
-  overflow: hidden;
   z-index: -1;
   opacity: 0.3;
 }
 
+@media (max-width: 1000px) {
+  .landing-image {
+    position: absolute;
+    bottom: 0;
+    right: -15rem;
+    width: 40rem;
+    height: 100rem;
+    background-image: url(images/pipesweyes.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+    overflow: hidden;
+    z-index: -1;
+    opacity: 0.3;
+  }
+
+  .landing h2 {
+    max-width: 15ch;
+  }
+}
+
+/* specific blog items */
 .blog-list.dates {
   display: inline-block;
   margin: 0;
+}
+
+/* mardown-it anchor styling */
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a {
+  opacity: 0;
+  color: var(--Gray-600);
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+}
+h1:hover > a,
+h2:hover > a,
+h3:hover > a,
+h4:hover > a {
+  opacity: 1;
+  transform: scale(0.5);
 }
 
 /* saving these styles for later maybe
