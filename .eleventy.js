@@ -41,7 +41,7 @@ module.exports = function (eleventyConfig) {
     slugify: markdownItSlugify,
     permalinkBefore: false,
     permalinkClass: 'direct-link',
-    permalinkSymbol: '#',
+    permalinkSymbol: '&#128279',
     level: [1, 2, 3, 4],
   });
 
