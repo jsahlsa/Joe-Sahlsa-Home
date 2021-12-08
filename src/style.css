@@ -313,7 +313,7 @@ p {
 
 ul,
 ol {
-  list-style: revert;
+  list-style: initial;
   padding: revert;
 }
 

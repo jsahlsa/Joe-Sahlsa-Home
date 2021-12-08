@@ -8,9 +8,8 @@ https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clik
 
 code[class*='language-'],
 pre[class*='language-'] {
-  color: #f8f8f2;
+  color: #2e2e29;
   background: none;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-size: 0.8rem;
   text-align: left;
@@ -39,7 +38,8 @@ pre[class*='language-'] {
 
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
-  background: #585a50;
+  background: #e7e9e2;
+  border:rgba(0, 0, 0, 0.3) solid 3px;
 }
 
 /* Inline code */
@@ -53,11 +53,11 @@ pre[class*='language-'] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #8292a2;
+  color: #1f2327;
 }
 
 .token.punctuation {
-  color: #f8f8f2;
+  color: #0f0f0d;
 }
 
 .token.namespace {
@@ -92,14 +92,14 @@ pre[class*='language-'] {
 .language-css .token.string,
 .style .token.string,
 .token.variable {
-  color: #f8f8f2;
+  color: #131311;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.function,
 .token.class-name {
-  color: #e6db74;
+  color: #ac6b16;
 }
 
 .token.keyword {
