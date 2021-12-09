@@ -1,5 +1,4 @@
 ---
-layout: home.njk
 title: Steps I am taking in building this
 tags: blog
 date: "2021-12-01"

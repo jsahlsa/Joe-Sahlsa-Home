@@ -9,6 +9,7 @@ https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clik
 code[class*='language-'],
 pre[class*='language-'] {
   color: #2e2e29;
+  text-shadow: 1px 1px hsla(23, 0%, 50%, 0.3);
   background: none;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-size: 0.8rem;
@@ -38,7 +39,7 @@ pre[class*='language-'] {
 
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
-  background: #e7e9e2;
+  background: hsl(45, 100%, 85%);
   border:rgba(0, 0, 0, 0.3) solid 3px;
 }
 
@@ -83,7 +84,7 @@ pre[class*='language-'] {
 .token.char,
 .token.builtin,
 .token.inserted {
-  color: #a6e22e;
+  color: #6e961f;
 }
 
 .token.operator,
@@ -103,7 +104,7 @@ pre[class*='language-'] {
 }
 
 .token.keyword {
-  color: #66d9ef;
+  color: #294272;
 }
 
 .token.regex,

@@ -1,6 +1,7 @@
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const { DateTime } = require('luxon');
 const markdownIt = require('markdown-it');
+const { default: anchor } = require('markdown-it-anchor');
 const markdownItAnchor = require('markdown-it-anchor');
 const slugify = require('slugify');
 
@@ -13,6 +14,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/index.js');
   eleventyConfig.addPassthroughCopy('src/fonts');
   eleventyConfig.addPassthroughCopy('src/images');
+
+  eleventyConfig.setDataDeepMerge(true);
 
   eleventyConfig.addFilter('postDate', (dateObj) => {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
@@ -37,12 +40,12 @@ module.exports = function (eleventyConfig) {
     breaks: true,
     linkify: true,
   }).use(markdownItAnchor, {
-    permalink: true,
+    permalink: anchor.permalink.headerLink(),
     slugify: markdownItSlugify,
     permalinkBefore: false,
     permalinkClass: 'direct-link',
     permalinkSymbol: '&#128279',
-    level: [1, 2, 3, 4],
+    level: [2, 3, 4],
   });
 
   eleventyConfig.setLibrary('md', mdIt);

@@ -1,5 +1,4 @@
 ---
-layout: home.njk
 title: Creating a style guide for this site
 tags: blog
 date: Last Modified

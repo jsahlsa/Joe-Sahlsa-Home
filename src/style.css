@@ -302,6 +302,7 @@ a:hover {
   text-underline-offset: 8px;
 }
 
+
 p {
   font-family: 'Aleo', var(--system-fonts-serif);
   line-height: 1.7;
@@ -323,7 +324,7 @@ code {
 }
 
 pre {
-  width: clamp(16rem, 93vw, 40rem);
+  width: clamp(16rem, 93vw, 35rem);
   font-size: 10px;
 }
 
@@ -334,7 +335,7 @@ code {
 }
 
 .cp_embed_wrapper {
-  width: clamp(16rem, 93vw, 40rem);
+  width: clamp(16rem, 93vw, 35rem);
 }
 /* set width of all pages except landing */
 .home {
@@ -363,7 +364,7 @@ h1 {
 
   line-height: var(--space-xl);
   color: var(--orange-A700);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   max-width: 15ch;
 }
 
@@ -472,6 +473,7 @@ svg:hover {
   font-size: var(--step-6);
   font-variation-settings: var(--mono), var(--crsv), var(--casl);
 }
+
 .landing h2 {
   --casl: 'CASL' 1;
   --mono: 'MONO' 0;
@@ -524,25 +526,34 @@ svg:hover {
 }
 
 /* mardown-it anchor styling */
-h1 > a,
+
+
 h2 > a,
 h3 > a,
 h4 > a {
-  opacity: 0;
-  color: var(--Gray-600);
+  color: var(--orange-500);
   text-decoration: none;
-  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-h1:hover > a,
-h2:hover > a,
-h3:hover > a,
-h4:hover > a {
-  opacity: 1;
+
+h2 > a:hover,
+h3 > a:hover,
+h4 > a:hover {
+  text-decoration: underline;
 }
 
 /* disable anchors on subheads */
 h1 + h2 > a {
-  display: none;
+  color: var(--Gray-600);
+  text-decoration: none;
+  cursor: inherit;
+}
+h1 + h2 > a:hover {
+  text-decoration: none;
+}
+
+/* codepen embeds */
+#embed-nav {
+  background-color: purple;
 }
 
 /* saving these styles for later maybe
