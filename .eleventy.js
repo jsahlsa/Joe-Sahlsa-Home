@@ -3,7 +3,6 @@ const { DateTime } = require('luxon');
 const markdownIt = require('markdown-it');
 const { default: anchor } = require('markdown-it-anchor');
 const markdownItAnchor = require('markdown-it-anchor');
-const slugify = require('slugify');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight, {
@@ -22,18 +21,6 @@ module.exports = function (eleventyConfig) {
   });
 
   // markdown-it anchor links
-  function removeExtraText(s) {
-    let newStr = String(s).replace(/New\ in\ v\d+\.\d+\.\d+/, '');
-    newStr = newStr.replace(/Coming\ soon\ in\ v\d+\.\d+\.\d+/, '');
-    newStr = newStr.replace(/⚠️/g, '');
-    newStr = newStr.replace(/[?!]/g, '');
-    newStr = newStr.replace(/<[^>]*>/g, '');
-    return newStr;
-  }
-
-  function markdownItSlugify(s) {
-    return slugify(removeExtraText(s), { lower: true, remove: /[:’'`,]/g });
-  }
 
   let mdIt = markdownIt({
     html: true,
@@ -41,10 +28,12 @@ module.exports = function (eleventyConfig) {
     linkify: true,
   }).use(markdownItAnchor, {
     permalink: anchor.permalink.headerLink(),
-    slugify: markdownItSlugify,
-    permalinkBefore: false,
-    permalinkClass: 'direct-link',
-    permalinkSymbol: '&#128279',
+    slugify: (s) =>
+      s
+        .trim()
+        .toLowerCase()
+        .replace(/[\s+~\/]/g, '-')
+        .replace(/[().`,%·'"!?¿:@*]/g, ''),
     level: [2, 3, 4],
   });
 

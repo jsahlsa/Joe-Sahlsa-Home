@@ -1,3 +1,4 @@
 {
-  "layout": "home.njk"
+  "layout": "home.njk",
+  "permalink": "blog/{{ title | slug }}/"
 }
