@@ -330,9 +330,10 @@ pre {
 
 :not(pre) > code {
   background: var(--Gray-200);
-  padding: 0.2rem;
+  padding: 0.1rem 0.3rem;
   border-radius: 5px;
   outline: 1px solid var(--teal-A400);
+  font-size: var(--step--3);
 }
 
 .cp_embed_wrapper {
@@ -536,9 +537,40 @@ svg:hover {
 }
 
 /* specific blog items */
+.blog.posts {
+  display: grid;
+  gap: 1rem;
+}
+
+.blog.post {
+  display: flex;
+  align-content: center;
+}
+.blog-list.dates + p {
+  display: none;
+}
 .blog-list.dates {
-  display: inline-block;
-  margin: 0;
+  margin-left: 1rem;
+  line-height: 0;
+  font-size: var(--step--3);
+}
+
+.blog-tags {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+.blog-tags > * {
+  font-family: var(--system-fonts-mono);
+  font-size: var(--step--4);
+  background: var(--teal-A700);
+  color: var(--Gray-50);
+  border-radius: 2em;
+  margin-right: 1em;
+  line-height: 1em;
+  padding: 0.4em;
+  align-self: center;
 }
 
 /* mardown-it anchor styling */

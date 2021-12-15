@@ -3,6 +3,7 @@ const { DateTime } = require('luxon');
 const markdownIt = require('markdown-it');
 const { default: anchor } = require('markdown-it-anchor');
 const markdownItAnchor = require('markdown-it-anchor');
+const markdownItAttrs = require('markdown-it-attrs');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight, {
@@ -26,16 +27,18 @@ module.exports = function (eleventyConfig) {
     html: true,
     breaks: true,
     linkify: true,
-  }).use(markdownItAnchor, {
-    permalink: anchor.permalink.headerLink(),
-    slugify: (s) =>
-      s
-        .trim()
-        .toLowerCase()
-        .replace(/[\s+~\/]/g, '-')
-        .replace(/[().`,%·'"!?¿:@*]/g, ''),
-    level: [2, 3, 4],
-  });
+  })
+    .use(markdownItAnchor, {
+      permalink: anchor.permalink.headerLink(),
+      slugify: (s) =>
+        s
+          .trim()
+          .toLowerCase()
+          .replace(/[\s+~\/]/g, '-')
+          .replace(/[().`,%·'"!?¿:@*]/g, ''),
+      level: [2, 3, 4],
+    })
+    .use(markdownItAttrs);
 
   eleventyConfig.setLibrary('md', mdIt);
 
