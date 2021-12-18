@@ -171,6 +171,40 @@
       var(--fluid-bp)
   );
 
+  /* one up pairs */
+  --space-3xs-2xs: calc(
+    ((var(--fc-3xs-min) / 16) * 1rem) + (var(--fc-2xs-max) - var(--fc-3xs-min)) *
+      var(--fluid-bp)
+  );
+  --space-2xs-xs: calc(
+    ((var(--fc-2xs-min) / 16) * 1rem) + (var(--fc-xs-max) - var(--fc-2xs-min)) *
+      var(--fluid-bp)
+  );
+  --space-xs-s: calc(
+    ((var(--fc-xs-min) / 16) * 1rem) + (var(--fc-s-max) - var(--fc-xs-min)) *
+      var(--fluid-bp)
+  );
+  --space-s-m: calc(
+    ((var(--fc-s-min) / 16) * 1rem) + (var(--fc-m-max) - var(--fc-s-min)) *
+      var(--fluid-bp)
+  );
+  --space-m-l: calc(
+    ((var(--fc-m-min) / 16) * 1rem) + (var(--fc-l-max) - var(--fc-m-min)) *
+      var(--fluid-bp)
+  );
+  --space-l-xl: calc(
+    ((var(--fc-l-min) / 16) * 1rem) + (var(--fc-xl-max) - var(--fc-l-min)) *
+      var(--fluid-bp)
+  );
+  --space-xl-2xl: calc(
+    ((var(--fc-xl-min) / 16) * 1rem) + (var(--fc-2xl-max) - var(--fc-xl-min)) *
+      var(--fluid-bp)
+  );
+  --space-2xl-3xl: calc(
+    ((var(--fc-2xl-min) / 16) * 1rem) + (var(--fc-3xl-max) - var(--fc-2xl-min)) *
+      var(--fluid-bp)
+  );
+
   /* fonts */
   --system-fonts-sans: system-ui, -apple-system, '.SFNSText-Regular',
     'San Francisco', 'Roboto', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande',
@@ -292,6 +326,9 @@ button {
   cursor: pointer;
 }
 
+header {
+  margin-bottom: 3rem;
+}
 a {
   color: var(--teal-dark);
   text-decoration: underline 3px;
@@ -316,6 +353,7 @@ ul,
 ol {
   list-style: initial;
   padding: revert;
+  font-family: RecVar, var(--system-fonts-sans);
 }
 
 pre,
@@ -324,9 +362,11 @@ code {
 }
 
 pre {
-  width: clamp(16rem, 93vw, 35rem);
+  width: clamp(16rem, 87vw, 35rem);
   font-size: 10px;
 }
+
+
 
 :not(pre) > code {
   background: var(--Gray-200);
@@ -337,12 +377,12 @@ pre {
 }
 
 .cp_embed_wrapper {
-  width: clamp(16rem, 93vw, 35rem);
+  width: clamp(16rem, 87vw, 35rem);
 }
 /* set width of all pages except landing */
 .home {
   margin: 0 auto;
-  max-width: clamp(16rem, 93vw, 55rem);
+  max-width: clamp(16rem, 87vw, 55rem);
 }
 
 /* for all h1s except landing */
@@ -364,7 +404,7 @@ h1 {
   font-size: var(--step-4);
   max-width: 15ch;
 
-  line-height: var(--space-xl);
+  line-height: var(--space-l-xl);
   color: var(--orange-A700);
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   max-width: 15ch;
@@ -389,7 +429,7 @@ h1 + h2 {
 h2 {
   --casl: 'CASL' 1;
   --mono: 'MONO' 0;
-  width: clamp(10ch, 93vw, 30ch);
+  width: clamp(10ch, 87vw, 30ch);
   margin: 1.5rem 0 0.5rem 0;
   font-size: var(--step-2);
   line-height: 1.2;
@@ -398,11 +438,15 @@ h2 {
   color: var(--orange-600);
 }
 
+header {
+  margin: 0;
+}
+
 .sitenav__container {
-  padding: 1rem;
+  padding: 2rem;
   display: flex;
   margin: 0;
-  width: clamp(16rem, 93vw, 40rem);
+  width: clamp(16rem, 87vw, 40rem);
   position: relative;
 }
 
@@ -440,7 +484,7 @@ h2 {
 .landing-wrapper {
   height: 100vh;
   overflow: hidden;
-  width: clamp(16rem, 93vw, 75rem);
+  width: clamp(16rem, 87vw, 75rem);
   margin: 0 auto;
   position: relative;
 }
@@ -469,6 +513,7 @@ svg {
   transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   padding: 0.2em;
   border: 3px solid var(--orange-A700);
+  transform: rotate(45deg);
 }
 
 svg:hover {
@@ -494,7 +539,9 @@ svg:hover {
   font-size: var(--step-1);
   font-weight: 300;
   font-variation-settings: var(--mono), var(--casl);
+  line-height: var(--space-s-m);
   color: var(--Gray-800);
+  margin-top: 0.5rem;
 }
 
 .landing-image {
@@ -528,49 +575,53 @@ svg:hover {
   }
 
   .landing h2 {
-    max-width: 15ch;
+    max-width: 20ch;
+    line-height: var(--space-m);
   }
 
   h1 {
     line-height: 1.1;
   }
+
+  
 }
 
 /* specific blog items */
 .blog.posts {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   gap: 1rem;
+  padding: 0;
 }
 
 .blog.post {
-  display: flex;
-  align-content: center;
+  display: grid;
+  border: 4px solid var(--teal-dark);
+  padding: 1rem;
 }
 .blog-list.dates + p {
   display: none;
 }
 .blog-list.dates {
-  margin-left: 1rem;
-  line-height: 0;
+  margin-top: 0;
   font-size: var(--step--3);
 }
 
 .blog-tags {
   list-style: none;
   display: flex;
-  align-items: center;
-  align-content: center;
+  padding: 0;
 }
 .blog-tags > * {
   font-family: var(--system-fonts-mono);
   font-size: var(--step--4);
   background: var(--teal-A700);
   color: var(--Gray-50);
+  box-shadow: 2px 2px 5px var(--Gray-300);
   border-radius: 2em;
-  margin-right: 1em;
+  margin-right: 0.5em;
   line-height: 1em;
   padding: 0.4em;
-  align-self: center;
 }
 
 /* mardown-it anchor styling */
