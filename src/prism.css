@@ -19,6 +19,7 @@ pre[class*='language-'] {
   word-break: normal;
   word-wrap: normal;
   line-height: 1.5;
+  position: relative;
 
   -moz-tab-size: 4;
   -o-tab-size: 4;
@@ -40,7 +41,28 @@ pre[class*='language-'] {
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
   background: hsl(45, 100%, 85%);
-  border:rgba(0, 0, 0, 0.3) solid 3px;
+  border: rgba(0, 0, 0, 0.3) solid 3px;
+}
+
+/* type of code for pres */
+pre[class*='language-']::after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 2px 4px;
+  color: hsl(45, 100%, 85%);
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 12px;
+}
+
+pre[class*='language-js']::after {
+  content: 'javascript';
+}
+pre[class*='language-css']::after {
+  content: 'css';
+}
+pre[class*='language-html']::after {
+  content: 'html';
 }
 
 /* Inline code */

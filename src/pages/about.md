@@ -1,6 +1,6 @@
 ---
 title: about
-layout: home.njk
+layout: layout-two.njk
 tags: pages
 ---
 

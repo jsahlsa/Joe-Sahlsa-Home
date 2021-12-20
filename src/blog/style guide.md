@@ -2,12 +2,11 @@
 title: Creating a style guide for this site
 tags: blog
 date: Last Modified
-
 ---
 
 # {{ title }}
 
-{{ page.date | postDate }}
+{{ page.date | postDate }} {.page-dates}
 
 Making a style guide is an intimidating proposition for me for a couple reasons. Firstly, I have never really created a proper one before, and secondly, it is for my own project, so I have more skin in the game. I'd ultimately like to get some sort of standard process in place that I could use for future projects. I think the best approach for me is to break it up into small sections that are more easily digestible.
 

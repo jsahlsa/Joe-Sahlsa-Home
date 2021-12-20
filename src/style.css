@@ -443,7 +443,7 @@ header {
 }
 
 .sitenav__container {
-  padding: 2rem;
+  padding: 2rem 0.7rem;
   display: flex;
   margin: 0;
   width: clamp(16rem, 87vw, 40rem);
@@ -488,6 +488,13 @@ header {
   margin: 0 auto;
   position: relative;
 }
+.blog-wrapper {
+  height: 100vh;
+  width: clamp(16rem, 87vw, 75rem);
+  margin: 0 auto;
+  position: relative;
+}
+
 
 .landing.main {
   display: grid;
@@ -622,6 +629,18 @@ svg:hover {
   margin-right: 0.5em;
   line-height: 1em;
   padding: 0.4em;
+}
+
+.page-dates {
+  color: var(--Gray-50);
+  font-size: var(--step--3);
+  text-transform: uppercase;
+  background: var(--teal-dark);
+  width: max-content;
+  padding: 0.3rem 0.3rem 0.2rem 0.3rem;
+  line-height: 1;
+  outline: var(--teal-dark) 1px solid;
+  outline-offset: 3px;
 }
 
 /* mardown-it anchor styling */

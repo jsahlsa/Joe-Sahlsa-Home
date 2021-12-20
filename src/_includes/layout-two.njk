@@ -2,9 +2,10 @@
   <body>
     <!-- Grab the content from the page data, dump it here, and mark it as safe -->
     <!-- Safe docs: https://mozilla.github.io/nunjucks/templating.html#safe -->
-
+    <div class="blog-wrapper">
+    {% include 'nav.njk' %}
     {{ content | safe }}
-
+    </div>
     <script src="/index.js" defer></script>
   </body>
 </html>
