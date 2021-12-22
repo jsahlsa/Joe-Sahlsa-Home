@@ -366,8 +366,6 @@ pre {
   font-size: 10px;
 }
 
-
-
 :not(pre) > code {
   background: var(--Gray-200);
   padding: 0.1rem 0.3rem;
@@ -495,7 +493,6 @@ header {
   position: relative;
 }
 
-
 .landing.main {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -589,8 +586,6 @@ svg:hover {
   h1 {
     line-height: 1.1;
   }
-
-  
 }
 
 /* specific blog items */
@@ -641,6 +636,52 @@ svg:hover {
   line-height: 1;
   outline: var(--teal-dark) 1px solid;
   outline-offset: 3px;
+}
+
+/* for next and previous styles */
+.previous-next {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.next-post {
+  margin-left: auto;
+  text-align: right;
+}
+.next-post::after,
+.previous-post::before {
+  --mono: "MONO" 1;
+  font-weight: 800;
+  font-size: var(--step--3);
+}
+.next-post::after {
+  content: ">";
+  margin-left: 1ch;
+}
+.previous-post::before {
+  content: "<";
+  margin-right: 1ch;
+}
+
+.post-nav {
+  font-family: RecVar, var(--system-fonts-mono);
+  font-size: var(--step--4);
+  color: var(--teal-A700);
+  background: var(--Gray-50);
+  border: var(--teal-A700) 4px solid;
+  padding: 0.2rem 0.6rem;
+  box-shadow: 4px 4px 0 var(--teal-A700);
+  text-decoration: none;
+}
+
+.post-nav:hover {
+  background: var(--teal-A700);
+  color: var(--Gray-50);
+  border: 4px solid var(--teal-A700);
+  box-shadow: -4px -4px var(--teal-A700);
 }
 
 /* mardown-it anchor styling */

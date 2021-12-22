@@ -4,7 +4,7 @@ layout: home.njk
 tags: pages
 ---
 
-<main class="main-blog">
+
 <ul class="blog posts">
 {% for post in collections.blog %}
 <li class="blog post">
@@ -19,4 +19,4 @@ tags: pages
 </li>
 {% endfor %}
 </ul>
-</main>
+

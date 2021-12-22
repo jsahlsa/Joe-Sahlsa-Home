@@ -1,0 +1,16 @@
+---
+layout: home.njk
+---
+
+{{ content | safe }}
+
+{% set previousPost = collections.blog | getPreviousCollectionItem(page) %} {%
+set nextPost = collections.blog | getNextCollectionItem(page) %} 
+<div class="previous-next">
+{% if
+previousPost %} 
+<a class="previous-post post-nav" href="{{ previousPost.url }}">{{ previousPost.data.title }}</a
+>{% endif %} {% if nextPost %}
+<a class="next-post post-nav" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a
+>{% endif %}
+</div>

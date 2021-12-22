@@ -1,4 +1,4 @@
 {
-  "layout": "home.njk",
+  "layout": "post.njk",
   "permalink": "blog/{{ title | slug }}/"
 }
