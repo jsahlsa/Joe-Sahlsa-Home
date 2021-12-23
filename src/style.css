@@ -59,6 +59,8 @@
     (var(--fluid-screen) - var(--fluid-min-width) / 16 * 1rem) /
       (var(--fluid-max-width) - var(--fluid-min-width))
   );
+
+  --blog-item-clamp: clamp(16rem, 87vw, 35rem)
 }
 
 @media screen and (min-width: 1140px) {
@@ -362,7 +364,7 @@ code {
 }
 
 pre {
-  width: clamp(16rem, 87vw, 35rem);
+  width: var(--blog-item-clamp);
   font-size: 10px;
 }
 
@@ -375,7 +377,7 @@ pre {
 }
 
 .cp_embed_wrapper {
-  width: clamp(16rem, 87vw, 35rem);
+  width: var(--blog-item-clamp);
 }
 /* set width of all pages except landing */
 .home {
@@ -477,14 +479,35 @@ header {
   box-shadow: -5px -5px var(--teal-dark);
 }
 
+/* footer */
+footer {
+  display: grid;
+  place-content: center;
+  background: var(--teal-dark);
+  color: var(--Gray-50);
+  padding: 1rem;
+}
+
+.outside-link > svg {
+  all: unset;
+  height: 1rem;
+}
+
+.twitter-logo {
+  fill: var(--Gray-50);
+}
+
+.footer-content > a {
+  transform: none;
+}
 /* Landing page */
 
 .landing-wrapper {
-  height: 100vh;
-  overflow: hidden;
-  width: clamp(16rem, 87vw, 75rem);
   margin: 0 auto;
   position: relative;
+  min-height: 100vh;
+  display: grid;
+  align-content: space-between;
 }
 .blog-wrapper {
   height: 100vh;
@@ -496,9 +519,10 @@ header {
 .landing.main {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  
   place-items: center;
   margin: 0 auto;
-  height: 100%;
+  
 }
 
 /* svg logo */
@@ -645,6 +669,7 @@ svg:hover {
   width: 100%;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  width: var(--blog-item-clamp);
 }
 
 .next-post {
