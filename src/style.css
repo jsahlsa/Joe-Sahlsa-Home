@@ -63,6 +63,20 @@
   --blog-item-clamp: clamp(16rem, 87vw, 35rem);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --Gray-50: #212121;
+    --teal-dark: hsl(165, 82%, 51%);
+    --teal-A400: hsl(165, 82%, 10%);
+    --Gray-800: #f5f5f5;
+    --orange-dark: #f5f5f5;
+    --Gray-200: #424242;
+    --orange-A700: hsl(45, 100%, 51%);
+    --orange-500: hsl(46, 100%, 65%);
+  }
+
+}
+
 @media screen and (min-width: 1140px) {
   :root {
     --fluid-screen: calc(var(--fluid-max-width) * 1px);
@@ -382,6 +396,15 @@ pre {
   font-size: var(--step--3);
 }
 
+@media (prefers-color-scheme: dark) {
+:not(pre) > code {
+  --teal-A400: white;
+    outline: 1px solid hsl(165, 82%, 51%);
+
+}
+
+}
+
 .cp_embed_wrapper {
   width: var(--blog-item-clamp);
 }
@@ -516,7 +539,6 @@ footer {
 .twitter-logo {
   fill: var(--teal-dark);
 }
-
 
 /* Landing page */
 
@@ -751,6 +773,10 @@ h1 + h2 > a:hover {
 html {
   visibility: visible;
   opacity: 1;
+}
+
+.eyes {
+  border: 2px solid red;
 }
 /* saving these styles for later maybe
 body {
