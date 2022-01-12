@@ -6,30 +6,7 @@ https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clik
  * @author ocodia
  */
 
-code[class*='language-'],
-pre[class*='language-'] {
-  color: #2e2e29;
-  text-shadow: 1px 1px hsla(23, 0%, 50%, 0.3);
-  background: none;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-size: 0.8rem;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  line-height: 1.5;
-  position: relative;
 
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
-}
 
 /* Code blocks */
 pre[class*='language-'] {
@@ -38,22 +15,7 @@ pre[class*='language-'] {
   overflow: auto;
 }
 
-:not(pre) > code[class*='language-'],
-pre[class*='language-'] {
-  background: hsl(45, 100%, 85%);
-  border: rgba(0, 0, 0, 0.3) solid 3px;
-}
 
-/* type of code for pres */
-pre[class*='language-']::after {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 2px 4px;
-  color: hsl(45, 100%, 85%);
-  background: rgba(0, 0, 0, 0.3);
-  font-size: 12px;
-}
 
 pre[class*='language-js']::after {
   content: 'javascript';
@@ -72,67 +34,6 @@ pre[class*='language-html']::after {
   white-space: normal;
 }
 
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: #1f2327;
-}
-
-.token.punctuation {
-  color: #0f0f0d;
-}
-
-.token.namespace {
-  opacity: 0.7;
-}
-
-.token.property,
-.token.tag,
-.token.constant,
-.token.symbol,
-.token.deleted {
-  color: #f92672;
-}
-
-.token.boolean,
-.token.number {
-  color: #ae81ff;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-  color: #6e961f;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string,
-.token.variable {
-  color: #131311;
-}
-
-.token.atrule,
-.token.attr-value,
-.token.function,
-.token.class-name {
-  color: #ac6b16;
-}
-
-.token.keyword {
-  color: #294272;
-}
-
-.token.regex,
-.token.important {
-  color: #fd971f;
-}
 
 .token.important,
 .token.bold {
