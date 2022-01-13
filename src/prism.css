@@ -11,21 +11,13 @@ https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clik
 /* Code blocks */
 pre[class*='language-'] {
   padding: 1em;
-  margin: 0.5em 0;
+  margin: 1em 0;
   overflow: auto;
 }
 
 
 
-pre[class*='language-js']::after {
-  content: 'javascript';
-}
-pre[class*='language-css']::after {
-  content: 'css';
-}
-pre[class*='language-html']::after {
-  content: 'html';
-}
+
 
 /* Inline code */
 :not(pre) > code[class*='language-'] {

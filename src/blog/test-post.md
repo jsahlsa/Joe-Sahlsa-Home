@@ -5,6 +5,8 @@ tags: [blog, git]
 
 # {{ title }}
 
+{{ page.date | postDate }} {.page-dates}
+
 Do not put spaces in [YAML](https://yaml.org/) frontmatter `tags` like this: `tags: blog git`, instead use an array like this: `tags: [blog, git]`, or as a list like this:
 
 ```yaml

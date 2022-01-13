@@ -7,4 +7,6 @@ tags: blog
 
 ## Because this has frustrated me more than once
 
+{{ page.date | postDate }} {.page-dates}
+
 I am going to write about my experience with this here after I get this site set up a bit better.

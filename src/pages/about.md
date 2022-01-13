@@ -6,8 +6,8 @@ tags: pages
 
 # {{ title | capitalize }} Me {.about-me}
 
-Hello, I'm Joe, an aspiring web developer currently residing in California. I am master of none and beholden to many most of the day, but sometimes I get to fool around on the computer. I like to write crappy JavaScript that doesn't work, and then does strange things when I try to fix it.
+Hello, I'm Joe. I have a wife, some kids, some dogs, some cats, and various other animals. I currently reside in sunny California. As of late I have developed a keen interest in computer related stuff, and would like to pursue this interest toward gainful employment. Or at the very least make some cool projects.
 
 I dabble mostly in frontend. Beyond `HTML`, `CSS`, and `JavaScript`, I have experience with [React](https://reactjs.org/), [Svelte](https://svelte.dev/), [Django](https://www.djangoproject.com/), [Express](https://expressjs.com/) and [Eleventy](https://www.11ty.dev/) (which I used to build this site). As far as programming languages go, I know a bit of `Python`, `PHP` and `VBA`.
 
-I'd like to use this site mostly for selfish reasons—to expand my own knowledge and skills. However, I do hope that one by-product of this is to help others who are in the process of learning like me. I think those of us trying to become web developers without a computer science background face particular challenges on our journeys, and I'd like to share some of my own (but only if i find a solution).
+ 

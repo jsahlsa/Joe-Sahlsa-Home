@@ -80,6 +80,7 @@
     --Gray-50: #212121;
     --teal-dark: hsl(165, 82%, 51%);
     --teal-A400: hsl(165, 82%, 10%);
+    --Gray-600: hsl(0, 0%, 70%);
     --Gray-800: #f5f5f5;
     --orange-dark: #f5f5f5;
     --Gray-200: #424242;
@@ -387,8 +388,7 @@ a:hover {
 p {
   font-family: 'Aleo', var(--system-fonts-serif);
   line-height: 1.7;
-  margin-top: 1rem;
-
+  margin: 1.5em 0 1em;
   color: var(--Gray-800);
   max-width: 60ch;
 }
@@ -412,7 +412,7 @@ pre {
 
 :not(pre) > code {
   background: var(--Gray-200);
-  padding: 0.1rem 0.3rem;
+  padding: 0.1em 0.2em;
   border-radius: 5px;
   outline: 1px solid var(--teal-A400);
   font-size: var(--step--3);
@@ -556,7 +556,7 @@ footer {
   margin-left: 0.5rem;
 }
 
-.twitter-logo {
+.footer-logo {
   fill: var(--teal-dark);
 }
 
@@ -708,8 +708,7 @@ footer {
   width: max-content;
   padding: 0.3rem 0.3rem 0.2rem 0.3rem;
   line-height: 1;
-  outline: var(--teal-dark) 1px solid;
-  outline-offset: 3px;
+  margin: 1em 0;
 }
 
 /* for next and previous styles */
@@ -839,7 +838,7 @@ pre[class*='language-']::after {
 }
 
 .token.punctuation {
-  color: var();
+  color: var(--Gray-800);
 }
 
 .token.namespace {
@@ -895,6 +894,22 @@ pre[class*='language-']::after {
 
 .highlight-line {
   color: var(--pre-highlight-line-color);
+}
+
+pre[class*='language-js']::after {
+  content: 'javascript';
+}
+pre[class*='language-css']::after {
+  content: 'css';
+}
+pre[class*='language-html']::after {
+  content: 'html';
+}
+pre[class*='language-yaml']::after {
+  content: 'yaml';
+}
+pre[class*='language-json']::after {
+  content: 'json';
 }
 
 html {

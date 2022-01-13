@@ -10,7 +10,7 @@ date: Last Modified
 
 Making a style guide is an intimidating proposition for me for a couple reasons. Firstly, I have never really created a proper one before, and secondly, it is for my own project, so I have more skin in the game. I'd ultimately like to get some sort of standard process in place that I could use for future projects. I think the best approach for me is to break it up into small sections that are more easily digestible.
 
-Right now my site is just posts and a landing page. The post pages should be pretty straightforward, but for the landing page I want to make something cool. Right now I think I'll use [figma](https://www.figma.com) to wireframe everything. I am going to use [google material design](https://material.io/design) to assist in creating a color theme. For fonts I am just going to bop around and try to find something cool. Nothing too out there, and probably two families tops. I may create an svg in illustrator for my landing page.
+Right now my site is just posts and a landing page. The post pages should be pretty straightforward, but for the landing page I want to make something cool. Right now I think I'll use [figma](https://www.figma.com) to wire-frame everything. I am going to use [google material design](https://material.io/design) to assist in creating a color theme. For fonts I am just going to bop around and try to find something cool. Nothing too out there, and probably two families tops. I may create an svg in illustrator for my landing page.
 
 ## Setting up the CSS
 
@@ -56,7 +56,7 @@ const add = (a, b) => {
 
 ```css
 h1 {
-  font-family: RecVar, var(--stems-sans);
+  font-family: RecVar, var(--system-sans);
 }
 ```
 
