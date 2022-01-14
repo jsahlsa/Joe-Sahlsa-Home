@@ -673,6 +673,7 @@ footer {
 
 .blog.post {
   display: grid;
+  align-content: space-between;
   border: 4px solid var(--teal-dark);
   padding: 1rem;
 }
