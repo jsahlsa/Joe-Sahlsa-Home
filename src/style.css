@@ -835,7 +835,8 @@ pre[class*='language-']::after {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #3982ca;
+  color: var(--Gray-800);
+  opacity: 0.4;
 }
 
 .token.punctuation {
