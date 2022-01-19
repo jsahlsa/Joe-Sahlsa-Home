@@ -592,12 +592,11 @@ footer {
 .logo {
   transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   padding: 0.2em;
-  border: 3px solid var(--orange-A700);
-  transform: rotate(45deg);
 }
 
 .logo:hover {
   transform: translateY(0.2rem);
+  transform: scale(1.1);
 }
 
 /* specific element styling landing page */
