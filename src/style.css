@@ -376,7 +376,8 @@ header {
 }
 a {
   color: var(--teal-dark);
-  text-decoration: underline 3px;
+  text-decoration-line: underline;
+  text-decoration-thickness: 3px;
   text-underline-offset: 3px;
   transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -414,7 +415,7 @@ pre {
   background: var(--Gray-200);
   padding: 0.1em 0.2em;
   border-radius: 5px;
-  outline: 1px solid var(--teal-A400);
+  border: 1px solid var(--teal-A400);
   font-size: var(--step--3);
 }
 
