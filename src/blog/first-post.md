@@ -47,6 +47,12 @@ for (let i = 0; i < links.length; i++) {
 }
 ```
 
+```css
+css {
+  test: test;
+}
+```
+
 The only other code in `index.js` removes `href`'s from blog `h2`s that contain the description of the post. This was necessary as I had used the [markdown-it](https://github.com/markdown-it/markdown-it) plug-in [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor) to create links for my headers. That code is just 2 lines:
 
 ```js

@@ -38,7 +38,7 @@
   --Gray-900: #212121;
   /* colors for prism */
   --pre-background: hsl(45, 100%, 85%);
-  --pre-border: hsla(0, 100%, 0%, 0.3);
+  --pre-border: hsla(0, 0%, 50%);
   --pre-shadow: hsl(0, 10, 10);
   --pre-token-keyword: hsl(233, 54%, 35%);
   --pre-token-function: hsl(20, 50%, 50%);
@@ -401,30 +401,7 @@ ol {
   font-family: RecVar, var(--system-fonts-sans);
 }
 
-pre,
-code {
-  font-family: var(--system-fonts-mono);
-}
 
-pre {
-  width: var(--blog-item-clamp);
-  font-size: 10px;
-}
-
-:not(pre) > code {
-  background: var(--Gray-200);
-  padding: 0.1em 0.2em;
-  border-radius: 5px;
-  border: 1px solid var(--teal-A400);
-  font-size: var(--step--3);
-}
-
-@media (prefers-color-scheme: dark) {
-  :not(pre) > code {
-    --teal-A400: white;
-    outline: 1px solid hsl(165, 82%, 51%);
-  }
-}
 
 .cp_embed_wrapper {
   width: var(--blog-item-clamp);
@@ -474,7 +451,8 @@ h1 + h2 {
   font-weight: 300;
   font-variation-settings: 'slnt' var(--slnt);
   color: var(--Gray-800);
-  margin: 0;
+  margin: 0.3em 0 1em 0;
+  
 }
 
 h2 {
@@ -602,7 +580,7 @@ footer {
 
 /* specific element styling landing page */
 .landing-body {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .landing h1 {
@@ -716,6 +694,7 @@ footer {
 .previous-next {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -723,7 +702,6 @@ footer {
 }
 
 .next-post {
-  margin-left: auto;
   text-align: right;
 }
 .next-post::after,
@@ -750,6 +728,7 @@ footer {
   padding: 0.2rem 0.6rem;
   box-shadow: 4px 4px 0 var(--teal-A700);
   text-decoration: none;
+  
 }
 
 .post-nav:hover {
@@ -784,12 +763,61 @@ h1 + h2 > a:hover {
   text-decoration: none;
 }
 
-/* prism colors */
+/* code */
+pre[class*='language-'] {
+  padding: 2em 2em 1em 2em;
+  margin: 1em 0;
+  overflow: auto;
+}
+
+pre,
+code {
+  font-family: var(--system-fonts-mono);
+}
+
+pre {
+  width: var(--blog-item-clamp);
+  font-size: 10px;
+}
+
+:not(pre) > code {
+  background: var(--Gray-200);
+  padding: 0.1em 0.2em;
+  border-radius: 5px;
+  border: 1px solid var(--teal-A400);
+  font-size: var(--step--3);
+}
+
+@media (prefers-color-scheme: dark) {
+  :not(pre) > code {
+    --teal-A400: white;
+    outline: 1px solid hsl(165, 82%, 51%);
+  }
+}
+
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
   background: var(--pre-background);
   border: var(--pre-border) solid 3px;
   color: #008e76;
+}
+
+:not(pre) > code[class*='language-'] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
 }
 
 /* type of code for pres */
@@ -817,14 +845,13 @@ pre[class*='language-'] {
   -ms-hyphens: none;
   hyphens: none;
 }
-pre[class*='language-']::after {
+.language-name {
   position: absolute;
-  right: 0;
-  top: 0;
-  padding: 2px 4px;
+  padding: 0 10px;
   color: var(--pre-background);
   background: var(--pre-border);
   font-size: 12px;
+  line-height: 1.8em;
 }
 
 .token.parameter {
@@ -898,21 +925,7 @@ pre[class*='language-']::after {
   color: var(--pre-highlight-line-color);
 }
 
-pre[class*='language-js']::after {
-  content: 'javascript';
-}
-pre[class*='language-css']::after {
-  content: 'css';
-}
-pre[class*='language-html']::after {
-  content: 'html';
-}
-pre[class*='language-yaml']::after {
-  content: 'yaml';
-}
-pre[class*='language-json']::after {
-  content: 'json';
-}
+
 
 html {
   visibility: visible;
