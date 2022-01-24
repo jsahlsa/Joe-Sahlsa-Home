@@ -15,9 +15,9 @@ After much procrastinating and a good amount of distracting myself I have finall
 
 ## Building this page
 
-In this first post I want to document how I built this site (mostly for my future self). After building sites mostly with just html, css, and javascript, I eventually learned more about server-side ([Django](), [express]()), frameworks/libraries, and static site generators. 
+In this first post I want to document how I built this site (mostly for my future self). After building sites mostly with just html, css, and javascript, I eventually learned more about server-side ([Django](), [express]()), frameworks/libraries, and static site generators.
 
-I came to the somewhat arbitrary decision to use [11ty]() for this site. I decided I wanted to use an [SSG](https://jamstack.org/generators/), and based on some reading, [11ty]() seemed like a good choice. As for the CSS, I decided to eschew any frameworks and instead write it myself. I also made the regrettable decision to put it all in one file, although I'm not really sure you could call that part a "decision". 
+I came to the somewhat arbitrary decision to use [11ty]() for this site. I decided I wanted to use an [SSG](https://jamstack.org/generators/), and based on some reading, [11ty]() seemed like a good choice. As for the CSS, I decided to eschew any frameworks and instead write it myself. I also made the regrettable decision to put it all in one file, although I'm not really sure you could call that part a "decision".
 
 ## 11ty
 
@@ -37,19 +37,13 @@ One thing I wanted was for outside links to open in a new tab, and for them to h
 // select links
 const links = document.links;
 
-// get each link that is not a part of the page 
+// get each link that is not a part of the page
 // and give it target: '_blank' and a class
 for (let i = 0; i < links.length; i++) {
   if (links[i].hostname != window.location.hostname) {
     links[i].setAttribute('class', 'outside-link');
     links[i].target = '_blank';
   }
-}
-```
-
-```css
-css {
-  test: test;
 }
 ```
 
@@ -62,8 +56,8 @@ subheadLinks.forEach((item) => (item.href = ''));
 
 ## Next steps
 
-In future posts I would like to write about some of the items that I glossed over here, like diving a bit more into getting started with 11ty and leveraging its plug-ins. The next site I intend to build I would like give [Next.js](https://nextjs.org/) (no pun intended) a shot. I'm going to try to write about that as I am building. 
+In future posts I would like to write about some of the items that I glossed over here, like diving a bit more into getting started with 11ty and leveraging its plug-ins. The next site I intend to build I would like give [Next.js](https://nextjs.org/) (no pun intended) a shot. I'm going to try to write about that as I am building.
 
-One thing I realize as I write is that it (writing) is the most difficult part. Admittedly I am out of practice, but it is a different sort of writing than I am used to. I majored in history, but don't remember most of it, (typical) or for that matter how to write. Hopefully it will come back to me. 
+One thing I realize as I write is that it (writing) is the most difficult part. Admittedly I am out of practice, but it is a different sort of writing than I am used to. I majored in history, but don't remember most of it, (typical) or for that matter how to write. Hopefully it will come back to me.
 
 That's it for this one. I'm off to get a domain, update my [twitter](https://twitter.com/joesahlsa), [github](https://github.com/jsahlsa), and [Stack Overflow](https://stackoverflow.com/).
