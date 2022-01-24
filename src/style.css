@@ -847,6 +847,7 @@ pre[class*='language-'] {
 }
 .language-name {
   position: absolute;
+  font-family: var(--system-fonts-mono), monospace;
   padding: 0 10px;
   color: var(--pre-background);
   background: var(--pre-border);
