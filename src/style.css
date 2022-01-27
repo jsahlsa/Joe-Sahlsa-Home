@@ -791,7 +791,7 @@ pre {
 @media (prefers-color-scheme: dark) {
   :not(pre) > code {
     --teal-A400: white;
-    outline: 1px solid hsl(165, 82%, 51%);
+    border: 1px solid hsl(165, 82%, 51%);
   }
 }
 
