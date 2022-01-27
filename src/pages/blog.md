@@ -7,9 +7,10 @@ tags: pages
 ##### Posts:
 <ul class="blog posts">
 {% for post in collections.blog %}
-<li class="blog post">
+<a href="{{ post.url }}" class="blog post">
+<li>
 <div>
-<a href="{{ post.url }}">{{ post.data.title }}</a> <p class='blog-list dates'>{{ post.date | postDate }}<p>
+{{ post.data.title }} <p class='blog-list dates'>{{ post.date | postDate }}<p>
 </div>
 <ul class="blog-tags">
 {% for tag in post.data.tags %}
@@ -19,15 +20,17 @@ tags: pages
 {% endfor %}
 </ul>
 </li>
+</a>
 {% endfor %}
 </ul>
 
 ##### Snippets:
 <ul class="blog posts">
 {% for snippet in collections.snippet %}
-<li class="blog post">
+<a href="{{ snippet.url }}" class="blog post">
+<li>
 <div>
-<a href="{{ snippet.url }}">{{ snippet.data.title }}</a> <p class='blog-list dates'>{{ snippet.date | postDate }}<p>
+{{ snippet.data.title }} <p class='blog-list dates'>{{ snippet.date | postDate }}<p>
 </div>
 <ul class="blog-tags">
 {% for tag in snippet.data.tags %}
@@ -37,5 +40,6 @@ tags: pages
 {% endfor %}
 </ul>
 </li>
+</a>
 {% endfor %}
 </ul>

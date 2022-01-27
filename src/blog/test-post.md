@@ -1,7 +1,9 @@
 ---
 title: Eleventy wont process post
-tags: snippet
-date: 2022-1-27
+tags: 
+  - snippet
+  - yaml
+date: 2022-01-27
 ---
 
 # {{ title }}

@@ -1,7 +1,9 @@
 ---
 title: First Post
-tags: blog
-date: 2022-1-17
+tags: 
+  - blog
+  - 11ty
+date: 2022-01-17
 description: 'A little about how this site came to be'
 ---
 
