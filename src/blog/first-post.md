@@ -1,7 +1,7 @@
 ---
 title: First Post
 tags: blog
-date: '2021-12-01'
+date: 2022-1-17
 description: 'A little about how this site came to be'
 ---
 
