@@ -15,13 +15,13 @@ After much procrastinating and a good amount of distracting myself I have finall
 
 ## Building this page
 
-In this first post I want to document how I built this site (mostly for my future self). After building sites mostly with just html, css, and javascript, I eventually learned more about server-side ([Django](), [express]()), frameworks/libraries, and static site generators.
+In this first post I want to document how I built this site (mostly for my future self). After building sites mostly with just html, css, and javascript, I eventually learned more about server-side ([Django](https://www.djangoproject.com/), [express](https://expressjs.com/)), frameworks/libraries, and static site generators.
 
-I came to the somewhat arbitrary decision to use [11ty]() for this site. I decided I wanted to use an [SSG](https://jamstack.org/generators/), and based on some reading, [11ty]() seemed like a good choice. As for the CSS, I decided to eschew any frameworks and instead write it myself. I also made the regrettable decision to put it all in one file, although I'm not really sure you could call that part a "decision".
+I came to the somewhat arbitrary decision to use [11ty](https://www.11ty.dev/) for this site. I decided I wanted to use an [SSG](https://jamstack.org/generators/), and based on some reading, [11ty](https://www.11ty.dev/) seemed like a good choice. As for the CSS, I decided to eschew any frameworks and instead write it myself. I also made the regrettable decision to put it all in one file, although I'm not really sure you could call that part a "decision".
 
 ## 11ty
 
-As this post is not meant to be a tutorial or any type of documentation I don't have a lot to say about [11ty]() other than it is awesome! As my site is pretty simple, I had everything wired up in a couple hours. I used both the built in [collections](https://www.11ty.dev/docs/collections/) and [pages](https://www.11ty.dev/docs/pages-from-data/). I also took advantage of the [syntaxhighlight](https://www.11ty.dev/docs/plugins/syntaxhighlight/) plugin. Initially I liked [11ty]() because I could use [markdown](https://www.markdownguide.org/) for my pages, and I also elected to use [nunjuks](https://mozilla.github.io/nunjucks/) for a templating language. So far so good…
+As this post is not meant to be a tutorial or any type of documentation I don't have a lot to say about [11ty](https://www.11ty.dev/) other than it is awesome! As my site is pretty simple, I had everything wired up in a couple hours. I used both the built in [collections](https://www.11ty.dev/docs/collections/) and [pages](https://www.11ty.dev/docs/pages-from-data/). I also took advantage of the [syntaxhighlight](https://www.11ty.dev/docs/plugins/syntaxhighlight/) plugin. Initially I liked [11ty](https://www.11ty.dev/) because I could use [markdown](https://www.markdownguide.org/) for my pages, and I also elected to use [nunjuks](https://mozilla.github.io/nunjucks/) for a templating language. So far so good…
 
 ## CSS
 
