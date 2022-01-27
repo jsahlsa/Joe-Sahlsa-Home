@@ -1,6 +1,6 @@
 ---
 title: Eleventy wont process post
-tags: [blog, git]
+tags: snippet
 ---
 
 # {{ title }}
