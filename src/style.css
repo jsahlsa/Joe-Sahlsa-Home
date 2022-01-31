@@ -72,6 +72,9 @@
       (var(--fluid-max-width) - var(--fluid-min-width))
   );
 
+  /* hue rotate custom property */
+  --rotation: 180deg;
+
   --blog-item-clamp: clamp(16rem, 87vw, 35rem);
 }
 
@@ -509,7 +512,20 @@ header {
   text-decoration: none;
   text-transform: uppercase;
 }
+.sitenav__container * a:visited {
+  background: var(--Gray-50);
+  color: var(--teal-dark);
+  border: 4px solid var(--teal-dark);
+  box-shadow: -5px -5px var(--teal-dark);
+  opacity: 0.1;
+}
 .sitenav__container * a:hover {
+  background: var(--teal-dark);
+  color: var(--Gray-50);
+  border: 4px solid var(--teal-dark);
+  box-shadow: -5px -5px var(--teal-dark);
+}
+.sitenav__container * a:active {
   background: var(--teal-dark);
   color: var(--Gray-50);
   border: 4px solid var(--teal-dark);
@@ -555,11 +571,26 @@ footer {
   align-content: space-between;
 }
 
+.landing-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(/images/pipesweyes.svg) left no-repeat;
+  background-size: cover;
+  opacity: 0.2;
+  mix-blend-mode: screen;
+  z-index: -1;
+  filter: hue-rotate(var(--rotation));
+}
+
 .landing.main {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-left: clamp(0.5rem, 10vw - 1rem, 20rem);
   place-items: center;
+  width: var(--blog-item-clamp);
+  margin: 0 auto;
 }
 
 /* svg logo */
@@ -606,7 +637,6 @@ footer {
   line-height: var(--space-s-m);
   color: var(--Gray-800);
   margin-top: 0.5rem;
-  background: var(--Gray-50);
 }
 
 .landing-image {
