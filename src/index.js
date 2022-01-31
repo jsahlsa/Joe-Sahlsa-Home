@@ -15,10 +15,11 @@ const landingWrapper = document.querySelector('html');
 
 function handleMove(e) {
   let hue = Math.floor((e.screenX / width) * 360);
-  let newValue = document.documentElement.style.setProperty('--rotation', hue + 'deg');
+  document.documentElement.style.setProperty('--rotation', hue + 'deg');
 }
 
 window.addEventListener('mousemove', handleMove);
+window.addEventListener('touchmove', handleMove);
 
 // add _blank target for outside links
 for (let i = 0; i < links.length; i++) {

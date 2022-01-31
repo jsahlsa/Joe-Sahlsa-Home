@@ -580,11 +580,18 @@ footer {
   height: 100%;
   background: url(/images/pipesweyes.svg) left no-repeat;
   background-size: cover;
-  opacity: 1;
-  mix-blend-mode: color;
+  opacity: 0.2;
+  mix-blend-mode: multiply;
   z-index: -1;
   filter: hue-rotate(var(--rotation));
-  transition: filter 2s ease-in-out;
+  transition: filter 0.7s ease-in-out;
+}
+
+@media (prefers-color-scheme: dark) {
+  .landing-wrapper::after {
+    opacity: 1;
+    mix-blend-mode: color;
+  }
 }
 
 .landing.main {
@@ -622,8 +629,9 @@ footer {
 }
 
 .landing h1 {
-  --casl: 'CASL' 0;
-  --crsv: 'CRSV' 0;
+  --casl: 'CASL' 0.2;
+  --crsv: 'CRSV' 0.5;
+  font-weight: 800;
   font-size: var(--step-6);
   font-variation-settings: var(--mono), var(--crsv), var(--casl);
 }

@@ -3,6 +3,7 @@ title: Eleventy wont process post
 tags: 
   - snippet
   - yaml
+  - 11ty
 date: 2022-01-27
 ---
 
