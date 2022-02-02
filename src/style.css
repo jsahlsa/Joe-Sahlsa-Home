@@ -576,15 +576,15 @@ footer {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: url(/images/pipesweyes.svg) left no-repeat;
+  width: 130%;
+  height: 130%;
+  background: url(/images/pipesweyes.svg) center no-repeat;
   background-size: cover;
   opacity: 0.2;
   mix-blend-mode: multiply;
   z-index: -1;
   filter: hue-rotate(var(--rotation));
-  transition: filter 0.7s ease-in-out;
+  transition: filter 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -629,11 +629,12 @@ footer {
 }
 
 .landing h1 {
-  --casl: 'CASL' 0.2;
+  --casl: 'CASL' 0.5;
   --crsv: 'CRSV' 0.5;
-  font-weight: 800;
+  font-weight: 700;
   font-size: var(--step-6);
   font-variation-settings: var(--mono), var(--crsv), var(--casl);
+  text-shadow: 1px 1px 0 var(--Gray-800), 1px -1px 0 var(--orange-500), -1px 1px 0 var(--orange-500), -1px -1px 0 var(--orange-500), 2px 2px 0 var(--orange-500), 3px 3px 0 var(--orange-500), 4px 4px 0 var(--orange-500), 5px 5px 0 var(--orange-500);
 }
 
 .landing h2 {
@@ -646,20 +647,6 @@ footer {
   line-height: var(--space-s-m);
   color: var(--Gray-800);
   margin-top: 0.5rem;
-}
-
-.landing-image {
-  position: absolute;
-  bottom: 5rem;
-  right: -10rem;
-  width: 40rem;
-  height: 100rem;
-  background-image: url(images/pipesweyes.svg);
-  background-repeat: no-repeat;
-  background-position: bottom;
-
-  z-index: -1;
-  opacity: 1;
 }
 
 @media (max-width: 1000px) {
