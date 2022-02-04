@@ -360,8 +360,10 @@ html {
   height: 100%;
 }
 
-html,
-body {
+html, body {
+  height: 100%;
+}
+.landing-body {
   position: relative;
   overflow: hidden;
 }
@@ -572,7 +574,7 @@ footer {
 .landing-wrapper {
   margin: 0 auto;
   position: relative;
-  min-height: 100vh;
+  min-height: 100%;
   display: grid;
   align-content: space-between;
 }
@@ -586,8 +588,8 @@ footer {
   height: 130%;
   background: url(/images/pipesweyes.svg) center no-repeat;
   background-size: cover;
-  opacity: 0.2;
-  mix-blend-mode: multiply;
+  opacity: 1;
+  mix-blend-mode: lighten;
   z-index: -1;
   filter: hue-rotate(var(--rotation));
   transition: filter 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955);
