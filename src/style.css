@@ -360,6 +360,12 @@ html {
   height: 100%;
 }
 
+html,
+body {
+  position: relative;
+  overflow: hidden;
+}
+
 .pages-body {
   display: grid;
   align-content: space-between;
@@ -634,7 +640,10 @@ footer {
   font-weight: 700;
   font-size: var(--step-6);
   font-variation-settings: var(--mono), var(--crsv), var(--casl);
-  text-shadow: 1px 1px 0 var(--Gray-800), 1px -1px 0 var(--orange-500), -1px 1px 0 var(--orange-500), -1px -1px 0 var(--orange-500), 2px 2px 0 var(--orange-500), 3px 3px 0 var(--orange-500), 4px 4px 0 var(--orange-500), 5px 5px 0 var(--orange-500);
+  text-shadow: 1px 1px 0 var(--Gray-800), 1px -1px 0 var(--orange-500),
+    -1px 1px 0 var(--orange-500), -1px -1px 0 var(--orange-500),
+    2px 2px 0 var(--orange-500), 3px 3px 0 var(--orange-500),
+    4px 4px 0 var(--orange-500), 5px 5px 0 var(--orange-500);
 }
 
 .landing h2 {
