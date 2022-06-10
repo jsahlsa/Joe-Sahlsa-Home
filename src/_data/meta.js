@@ -3,5 +3,7 @@ module.exports = {
   siteName: 'Joe Sahlsa',
   siteDescription: 'Website for an aspiring web developer',
   authorName: 'Joe Sahlsa',
-  twitterUsername: 'joesahlsa', // no `@`
+  twitterUsername: 'joesahlsa',
+  domain: 'josahlsa.dev',
+  url: 'https://josahlsa.dev', // no `@`
 };
