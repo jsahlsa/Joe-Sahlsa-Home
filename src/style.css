@@ -702,6 +702,7 @@ footer {
   .landing h2 {
     max-width: 20ch;
     line-height: var(--space-m);
+    font-weight: 600;
   }
 
   h1 {
