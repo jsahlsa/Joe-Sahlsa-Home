@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "netlify dev",
+    "dev": "npx @11ty/eleventy --serve",
     "build": "NODE_ENV=production npx @11ty/eleventy",
     "build:local": "NODE_ENV=production netlify build",
-    "start": "netlify dev",
+    "start": "npx @11ty/eleventy --serve",
     "lint": "stylelint 'src/*.css'",
     "postbuild": "postcss _site/*.css -u autoprefixer cssnano postcss-preset-env -r --no-map"
   },

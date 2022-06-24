@@ -73,7 +73,7 @@
   );
 
   /* hue rotate custom property */
-  --rotation: 180deg;
+  --rotation: 150deg;
 
   --blog-item-clamp: clamp(16rem, 87vw, 35rem);
 }
@@ -360,7 +360,8 @@ html {
   height: 100%;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 .landing-body {
@@ -413,7 +414,6 @@ ol {
   margin: max(0.9ch, 1em) 0;
   padding: revert;
   font-family: RecVar, var(--system-fonts-sans);
-  
 }
 
 p + ul {
@@ -422,7 +422,6 @@ p + ul {
 
 li {
   margin: max(0.8ch, 0.7em) 0;
-
 }
 
 .cp_embed_wrapper {
@@ -598,15 +597,24 @@ footer {
   position: absolute;
   top: 0;
   left: 0;
-  width: 130%;
-  height: 130%;
+  width: 150%;
+  height: 150%;
   background: url(/images/pipesweyes.svg) center no-repeat;
   background-size: cover;
-  opacity: 1;
-  mix-blend-mode: lighten;
+  opacity: 0.2;
+  mix-blend-mode: darken;
   z-index: -1;
   filter: hue-rotate(var(--rotation));
-  transition: filter 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  animation: 10s infinite alternate hue-rotate;
+}
+
+@keyframes hue-rotate {
+  from {
+    filter: hue-rotate(0);
+  }
+  to {
+    filter: hue-rotate(360);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
