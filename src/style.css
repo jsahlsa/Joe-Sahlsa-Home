@@ -27,6 +27,8 @@
   --text-white: #fafafa;
   --orange-dark: hsl(26, 100%, 10%);
   --Gray-50: #fafafa;
+  --Gray-50-bg: hsla(0, 0%, 95%, 0.9);
+
   --Gray-100: #f5f5f5;
   --Gray-200: #eeeeee;
   --Gray-300: #e0e0e0;
@@ -81,6 +83,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --Gray-50: #212121;
+    --Gray-50-bg: hsla(0, 0%, 5%, 0.5);
     --teal-dark: hsl(165, 82%, 51%);
     --teal-A400: hsl(165, 82%, 10%);
     --Gray-600: hsl(0, 0%, 70%);
@@ -558,7 +561,7 @@ footer {
   place-content: center;
   background: var(--teal-A400);
   color: var(--teal-dark);
-  border-top: var(--teal-dark) 4px solid;
+  border-top: var(--teal-dark) 1px dotted;
   padding: 0.3rem;
   margin-top: 2rem;
   width: 100vw;
@@ -589,7 +592,7 @@ footer {
   min-height: 100%;
   display: grid;
   align-content: space-between;
-  background-color: hsla(0, 0%, 0%, 0.7);
+  background-color: var(--Gray-50-bg);
   overflow: hidden;
 }
 
@@ -619,8 +622,7 @@ footer {
 
 @media (prefers-color-scheme: dark) {
   .landing-wrapper::after {
-    opacity: 1;
-    mix-blend-mode: color;
+    mix-blend-mode: darken;
   }
 }
 
