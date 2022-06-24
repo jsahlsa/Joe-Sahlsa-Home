@@ -622,7 +622,7 @@ footer {
 
 @media (prefers-color-scheme: dark) {
   .landing-wrapper::after {
-    mix-blend-mode: darken;
+    mix-blend-mode: color;
   }
 }
 
@@ -685,19 +685,20 @@ footer {
 }
 
 @media (max-width: 1000px) {
-  .landing-image {
+  .landing-wrapper::after {
+    content: '';
     position: absolute;
-    bottom: 0;
-    right: -15rem;
-    width: 40rem;
-    height: 100rem;
-    background-image: url(images/pipesweyes.svg);
-    background-repeat: no-repeat;
-    background-position: bottom;
-
-    overflow: hidden;
+    top: -20rem;
+    left: -10rem;
+    width: 200%;
+    height: 200%;
+    background: url(/images/pipesweyes.svg) center no-repeat;
+    background-size: cover;
+    z-index: -1;
+    mix-blend-mode: darken;
+    filter: hue-rotate(0deg);
+    animation: 20s linear infinite alternate hue-rotate;
   }
-
   .landing h2 {
     max-width: 20ch;
     line-height: var(--space-m);
