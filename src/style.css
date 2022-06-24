@@ -604,7 +604,7 @@ footer {
   opacity: 0.2;
   mix-blend-mode: darken;
   z-index: -1;
-  filter: hue-rotate(var(--rotation));
+  filter: hue-rotate(0);
   animation: 10s infinite alternate hue-rotate;
 }
 
