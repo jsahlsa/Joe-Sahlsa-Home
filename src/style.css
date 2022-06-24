@@ -589,7 +589,7 @@ footer {
   min-height: 100%;
   display: grid;
   align-content: space-between;
-  background-color: hsla(0, 0%, 0%, 0.5);
+  background-color: hsla(0, 0%, 0%, 0.7);
   overflow: hidden;
 }
 
