@@ -604,16 +604,16 @@ footer {
   opacity: 0.2;
   mix-blend-mode: darken;
   z-index: -1;
-  filter: hue-rotate(0);
+  filter: hue-rotate(0deg);
   animation: 10s infinite alternate hue-rotate;
 }
 
 @keyframes hue-rotate {
   from {
-    filter: hue-rotate(0);
+    filter: hue-rotate(0deg);
   }
   to {
-    filter: hue-rotate(360);
+    filter: hue-rotate(360deg);
   }
 }
 
