@@ -603,6 +603,7 @@ footer {
   background: url(/images/pipesweyes.svg) center no-repeat;
   background-size: cover;
   z-index: -1;
+  mix-blend-mode: darken;
   filter: hue-rotate(0deg);
   animation: 20s linear infinite alternate hue-rotate;
 }
