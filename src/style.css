@@ -589,6 +589,7 @@ footer {
   min-height: 100%;
   display: grid;
   align-content: space-between;
+  background-color: hsla(0, 0%, 0%, 0.5);
   overflow: hidden;
 }
 
@@ -601,11 +602,9 @@ footer {
   height: 150%;
   background: url(/images/pipesweyes.svg) center no-repeat;
   background-size: cover;
-  opacity: 0.2;
-  mix-blend-mode: darken;
   z-index: -1;
   filter: hue-rotate(0deg);
-  animation: 10s infinite alternate hue-rotate;
+  animation: 20s linear infinite alternate hue-rotate;
 }
 
 @keyframes hue-rotate {
