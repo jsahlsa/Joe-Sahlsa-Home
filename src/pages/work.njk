@@ -1,0 +1,66 @@
+---
+title: work
+layout: home.njk
+tags: pages
+---
+
+<h5>Selected Websites</h5>
+
+<ul class="work posts">
+{% for work in collections.work %}
+<a href="{{ work.data.site }}" class="work post">
+<div class='work-image-container'>
+<img class='work-image' src="{{ work.data.image }}" />
+</div>
+<div class='work-info-container'>
+<li>
+
+<div>
+<h4 class="work-title">{{ work.data.title }}</h4>
+<p class="work-description">{{ work.data.description }}</p>
+<p class="work-description">{{ work.templateContent }}</p>
+</div>
+<ul class="work-tags">
+{% set tags = work.data.tags | exclude('work') %}
+{% for tag in tags %}
+<li>
+{{ tag | lower }}
+</li>
+{% endfor %}
+</ul>
+</li>
+</div>
+</a>
+{% endfor %}
+</ul>
+
+<h5>Selected Print</h5>
+
+<ul class="work posts">
+{% for work in collections.print %}
+<a href="{{ work.data.site }}" class="work post">
+<div class='work-image-container'>
+<img class='work-image' src="{{ work.data.image }}" />
+</div>
+<div class='work-info-container'>
+<li>
+
+<div>
+<h4 class="work-title">{{ work.data.title }}</h4>
+<p class="work-description">{{ work.data.description }}</p>
+<p class="work-description">{{ work.templateContent }}</p>
+</div>
+<ul class="work-tags">
+{% set hello = "hello" %}
+{% set tags = work.data.tags | exclude('print') %}
+{% for tag in tags %}
+<li>
+{{ tag | lower }}
+</li>
+{% endfor %}
+</ul>
+</li>
+</div>
+</a>
+{% endfor %}
+</ul>

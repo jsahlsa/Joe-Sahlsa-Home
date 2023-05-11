@@ -21,6 +21,16 @@ module.exports = function (eleventyConfig) {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
   });
 
+  // filter to exclude tags from posts
+  eleventyConfig.addFilter('exclude', (collection, stringToFilter) => {
+    if (!stringToFilter) {
+      return collection;
+    }
+    console.log(collection);
+    console.log(stringToFilter);
+    return (collection ?? []).filter((item) => item !== stringToFilter);
+  });
+
   eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
   // markdown-it anchor links
 

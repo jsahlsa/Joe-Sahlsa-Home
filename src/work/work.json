@@ -1,0 +1,4 @@
+{
+  "layout": "post.njk",
+  "permalink": "work/{{ title | slug }}/"
+}

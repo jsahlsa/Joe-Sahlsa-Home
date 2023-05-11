@@ -16,7 +16,7 @@ const landingWrapper = document.querySelector('html');
 // add _blank target for outside links
 for (let i = 0; i < links.length; i++) {
   if (links[i].hostname != window.location.hostname) {
-    links[i].setAttribute('class', 'outside-link');
+    links[i].classList.add('outside-link');
     links[i].target = '_blank';
   }
 }
