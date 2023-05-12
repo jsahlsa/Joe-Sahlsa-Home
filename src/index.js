@@ -34,3 +34,10 @@ pres.forEach((item) => {
 // remove links from subheads, trade off between javascript and accessibility
 const subheadLinks = document.querySelectorAll('h1 + h2 > a');
 subheadLinks.forEach((item) => (item.href = ''));
+
+const eye = document.querySelector('.eye');
+const rings = eye.querySelectorAll('path');
+
+eye.addEventListener('mouseover', (e) => {
+  console.log(this);
+});
