@@ -1,0 +1,149 @@
+html {
+  font-family: var(--system-fonts-serif);
+  line-height: var(--space-s);
+  font-size: var(--step-0);
+  color: var(--orange-dark);
+  background: var(--Gray-50);
+  height: 100%;
+}
+
+html,
+body {
+  height: 100%;
+}
+.landing-body {
+  position: relative;
+}
+
+.pages-body {
+  display: grid;
+  align-content: space-between;
+  min-height: 100vh;
+}
+
+a,
+input[type='radio'],
+input[type='checkbox'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+header {
+  margin-bottom: 3rem;
+}
+a {
+  color: var(--teal-dark);
+  text-decoration-line: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 3px;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+a:hover {
+  text-underline-offset: 8px;
+}
+
+p {
+  font-family: 'Aleo', var(--system-fonts-serif);
+  line-height: 1.6;
+  margin: 1.2em 0 1em;
+  color: var(--Gray-800);
+  max-width: 60ch;
+}
+
+ul,
+ol {
+  color: var(--Gray-800);
+  font-size: var(--step--2);
+  list-style: initial;
+  margin: max(0.9ch, 1em) 0;
+  padding: revert;
+  font-family: RecVar, var(--system-fonts-sans);
+}
+
+p + ul {
+  width: var(--blog-item-clamp);
+}
+
+li {
+  margin: max(0.8ch, 0.7em) 0;
+}
+
+.cp_embed_wrapper {
+  width: var(--blog-item-clamp);
+}
+/* set width of all pages except landing */
+.home {
+  margin: 0 auto;
+  max-width: clamp(16rem, 87vw, 55rem);
+  margin-top: 4rem;
+}
+
+/* for all h1s except landing */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: RecVar, var(--system-fonts-mono);
+  font-variation-settings: var(--mono), var(--casl), var(--crsv), var(--slnt);
+}
+
+h1 {
+  --mono: 'MONO' 0.3;
+  --crsv: 'CRSV' 1;
+  --casl: 'CASL' 0.4;
+  font-weight: 800;
+  font-size: var(--step-4);
+  max-width: 15ch;
+
+  line-height: var(--space-l-xl);
+  color: var(--orange-A700);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  max-width: 15ch;
+}
+
+h1:hover {
+  --mono: 'MONO' 0.7;
+  letter-spacing: -0.1rem;
+  font-weight: 900;
+}
+
+/* different styles for subheads */
+h1 + h2 {
+  --slnt: -7;
+  font-size: var(--step-0);
+  font-weight: 300;
+  font-variation-settings: 'slnt' var(--slnt);
+  color: var(--Gray-800);
+  margin: 0em 0 0.6em 0;
+}
+
+h2 {
+  --casl: 'CASL' 1;
+  --mono: 'MONO' 0;
+  width: clamp(10ch, 87vw, 30ch);
+  margin: 1.5rem 0 0.5rem 0;
+  font-size: var(--step-2);
+  line-height: 1.2;
+  font-weight: 600;
+  font-variation-settings: var(--mono), var(--casl);
+  color: var(--orange-600);
+}
+
+h5 {
+  --mono: 'MONO' 1;
+  color: var(--orange-600);
+  font-weight: 800;
+  margin: 1em 0 0.5em 0;
+  font-size: var(--step-1);
+  font-variation-settings: var(--mono), var(--casl);
+}
+
+header {
+  margin: 0;
+  width: clamp(16rem, 87vw, 75rem);
+  margin: 0 auto;
+}

@@ -4,13 +4,43 @@ const markdownIt = require('markdown-it');
 const { default: anchor } = require('markdown-it-anchor');
 const markdownItAnchor = require('markdown-it-anchor');
 const markdownItAttrs = require('markdown-it-attrs');
+const postcss = require('postcss');
+const postcssImport = require('postcss-import');
+const postcssMediaMinmax = require('postcss-media-minmax');
+const autoprefixer = require('autoprefixer');
+const postcssCsso = require('postcss-csso');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight, {
     alwaysWrapLineHighlights: true,
   });
 
-  eleventyConfig.addPassthroughCopy('src/*.css');
+  // postcss config
+  eleventyConfig.addTemplateFormats('css');
+
+  eleventyConfig.addExtension('css', {
+    outputFileExtension: 'css',
+    compile: async (content, path) => {
+      if (path !== './src/style.css') {
+        return;
+      }
+
+      console.log(`path: ${path}`);
+      console.log(`content: ${content}`);
+      return async () => {
+        let output = await postcss([
+          postcssImport,
+          postcssMediaMinmax,
+          autoprefixer,
+          postcssCsso,
+        ]).process(content, {
+          from: path,
+        });
+        return output.css;
+      };
+    },
+  });
+
   eleventyConfig.addPassthroughCopy('src/index.js');
   eleventyConfig.addPassthroughCopy('src/fonts');
   eleventyConfig.addPassthroughCopy('src/images');

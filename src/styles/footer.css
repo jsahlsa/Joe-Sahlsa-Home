@@ -1,0 +1,26 @@
+/* footer */
+footer {
+  display: grid;
+  place-content: center;
+  color: var(--teal-dark);
+  padding: 0.3rem;
+  margin-top: 2rem;
+  width: 100vw;
+  font-family: RecVar, var(--system-fonts-mono);
+  text-transform: uppercase;
+  font-size: var(--step--3);
+}
+
+.outside-link > svg {
+  height: 1rem;
+}
+
+.footer-content > a {
+  display: inline-grid;
+  transform: translateY(5px);
+  margin-left: 0.5rem;
+}
+
+.footer-logo {
+  fill: var(--teal-dark);
+}
