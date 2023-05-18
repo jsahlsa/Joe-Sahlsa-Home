@@ -90,7 +90,7 @@
   padding: 1rem;
   margin: 0;
   height: auto;
-  width: max(400px, 90%);
+  width: max(300px, 75%);
   background-color: var(--pink-transparent);
 }
 
