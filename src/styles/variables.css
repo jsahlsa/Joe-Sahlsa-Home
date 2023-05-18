@@ -40,6 +40,22 @@
   --pre-token-property: hsl(310, 50%, 50%);
   --pre-token-punctuation: hsl(310, 50%, 10%);
   --pre-token-selector: hsl(150, 50%, 50%);
+
+  --pink-dark: hsl(300 80% 70% / 1);
+  --dark-pink-dark: hsl(340 70% 60% / 1);
+  --pink-light: hsl(320 50% 70% / 1);
+  --dark-pink-light: hsl(340 70% 60% / 1);
+  --pink-transparent: hsl(320 50% 50% / 0.4);
+
+  --orange-pink-gradient: linear-gradient(
+    90deg,
+    hsl(300deg 80% 70%) 0%,
+    hsl(339deg 89% 62%) 20%,
+    hsl(18deg 96% 54%) 41%,
+    hsl(18deg 96% 54%) 61%,
+    hsl(339deg 89% 62%) 80%,
+    hsl(300deg 80% 70%) 100%
+  );
   /* custom properties for fluid tye */
   --step--4: clamp(0.63rem, 0.64rem + -0.02vw, 0.61rem);
   --step--3: clamp(0.76rem, 0.76rem + 0.01vw, 0.77rem);
@@ -52,7 +68,7 @@
   --step-4: clamp(2.72rem, 2.52rem + 1.02vw, 3.66rem);
   --step-5: clamp(3.27rem, 2.98rem + 1.42vw, 4.58rem);
   --step-6: clamp(3.92rem, 3.53rem + 1.95vw, 5.72rem);
-  --step-7: clamp(6rem, 5.75rem + 3.15vw, 13rem);
+  --step-7: clamp(4.3rem, 4.75rem + 2.15vw, 8rem);
   /* custom properties for fluid line height */
 
   --fluid-min-width: 320;
@@ -78,6 +94,9 @@
     --Gray-200: #424242;
     --orange-A700: hsl(45, 100%, 51%);
     --orange-500: hsl(46, 100%, 65%);
+    --pink-dark: hsl(320 50% 50% / 1);
+    --dark-pink-dark: hsl(340 70% 60% / 1);
+    --pink-transparent: hsl(320 50% 50% / 0.4);
     --pre-background: hsl(45, 20%, 10%);
     --pre-border: hsla(0, 0%, 70%, 1);
     --pre-shadow: hsla(0, 100%, 100%, 0.2);

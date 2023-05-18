@@ -1,9 +1,8 @@
 ---
 title: First Post
-tags: 
+tags:
   - blog
   - 11ty
-date: 2022-01-17
 description: 'A little about how this site came to be'
 ---
 
@@ -42,7 +41,7 @@ const links = document.links;
 // get each link that is not a part of the page
 // and give it target: '_blank' and a class
 for (let i = 0; i < links.length; i++) {
-  if (links[i].hostname != window.location.hostname) {
+  if (links[i].hostname !== window.location.hostname) {
     links[i].setAttribute('class', 'outside-link');
     links[i].target = '_blank';
   }
@@ -60,6 +59,6 @@ subheadLinks.forEach((item) => (item.href = ''));
 
 In future posts I would like to write about some of the items that I glossed over here, like diving a bit more into getting started with 11ty and leveraging its plug-ins. The next site I intend to build I would like give [Next.js](https://nextjs.org/) (no pun intended) a shot. I'm going to try to write about that as I am building.
 
-One thing I realize as I write is that it (writing) is the most difficult part. Admittedly I am out of practice, but it is a different sort of writing than I am used to. I majored in history, but don't remember most of it, (typical) or for that matter how to write. Hopefully it will come back to me.
+One thing I realize as I write is that it (writing) is the most difficult part. Admittedly I am out of practice, but it is a different sort of writing than I am used to. I majored in history, but don't remember most of it (typical), or for that matter how to write. Hopefully it will come back to me.
 
 That's it for this one. I'm off to get a domain, update my [twitter](https://twitter.com/joesahlsa), [github](https://github.com/jsahlsa), and [Stack Overflow](https://stackoverflow.com/).

@@ -10,7 +10,7 @@
 .work.post {
   display: grid;
   align-content: space-between;
-  border: 4px solid var(--teal-dark);
+  border: 8px solid var(--teal-dark);
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   text-decoration-line: none;
@@ -52,7 +52,7 @@
   background: var(--teal-A700);
   color: var(--Gray-50);
   border-radius: 2em;
-  margin-right: 0.5em;
+  margin: 0.2em 0.2em;
   line-height: 1em;
   padding: 0.4em;
 }
@@ -62,6 +62,7 @@
   justify-content: center;
   align-items: start;
   overflow: hidden;
+  border-bottom: 8px solid var(--teal-dark);
 }
 .work-image {
   min-width: 100%;

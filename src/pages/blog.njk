@@ -14,7 +14,8 @@ tags: pages
 <h4 class="post-title">{{ post.data.title }}</h4> <p class='blog-list dates'>{{ post.date | postDate }}<p>
 </div>
 <ul class="blog-tags">
-{% for tag in post.data.tags %}
+{% set tags = post.data.tags | exclude('blog') %}
+{% for tag in tags %}
 <li>
 {{ tag | lower }}
 </li>
@@ -35,7 +36,9 @@ tags: pages
 <h4 class="post-title">{{ snippet.data.title }}</h4> <p class='blog-list dates'>{{ snippet.date | postDate }}<p>
 </div>
 <ul class="blog-tags">
-{% for tag in snippet.data.tags %}
+{% set tags = snippet.data.tags | exclude('snippet') %}
+
+{% for tag in tags %}
 <li>
 {{ tag | lower }}
 </li>

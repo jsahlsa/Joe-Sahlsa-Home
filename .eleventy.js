@@ -18,6 +18,10 @@ module.exports = function (eleventyConfig) {
   // postcss config
   eleventyConfig.addTemplateFormats('css');
 
+  // post css processing
+  // merges all imports and processes output
+  // without copying import files
+  // credit: https://pepelsbey.dev/articles/eleventy-css-js/
   eleventyConfig.addExtension('css', {
     outputFileExtension: 'css',
     compile: async (content, path) => {
@@ -56,8 +60,6 @@ module.exports = function (eleventyConfig) {
     if (!stringToFilter) {
       return collection;
     }
-    console.log(collection);
-    console.log(stringToFilter);
     return (collection ?? []).filter((item) => item !== stringToFilter);
   });
 
