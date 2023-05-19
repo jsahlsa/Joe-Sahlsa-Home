@@ -68,7 +68,7 @@
   --step-4: clamp(2.72rem, 2.52rem + 1.02vw, 3.66rem);
   --step-5: clamp(3.27rem, 2.98rem + 1.42vw, 4.58rem);
   --step-6: clamp(3.92rem, 3.53rem + 1.95vw, 5.72rem);
-  --step-7: clamp(4rem, 4.1rem + 2.15vw, 8rem);
+  --step-7: clamp(4rem, 4.1rem + 2.15vw, 12rem);
   /* custom properties for fluid line height */
 
   --fluid-min-width: 320;

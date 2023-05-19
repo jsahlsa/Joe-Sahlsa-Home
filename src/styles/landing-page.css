@@ -58,7 +58,7 @@
   --bg-size: 400%;
   font-weight: 1000;
   font-size: var(--step-7);
-  line-height: 4.9rem;
+  line-height: var(--step-6);
   font-variation-settings: var(--mono), var(--crsv), var(--casl);
   background: var(--orange-pink-gradient) 0 0 / var(--bg-size) 100%;
   color: transparent;
