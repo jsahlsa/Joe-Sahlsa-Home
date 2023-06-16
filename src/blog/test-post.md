@@ -1,6 +1,6 @@
 ---
 title: Eleventy wont process post
-tags: 
+tags:
   - snippet
   - yaml
   - 11ty

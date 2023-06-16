@@ -51,7 +51,6 @@ tags: pages
 <p class="work-description">{{ work.templateContent }}</p>
 </div>
 <ul class="work-tags">
-{% set hello = "hello" %}
 {% set tags = work.data.tags | exclude('print') %}
 {% for tag in tags %}
 <li>

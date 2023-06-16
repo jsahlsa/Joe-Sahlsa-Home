@@ -42,6 +42,9 @@
   --pre-token-selector: hsl(150, 50%, 50%);
 
   --pink-dark: hsl(300 80% 70% / 1);
+  --pink-800: hsl(300 80% 70% / 1);
+  --pink-200: hsl(320 50% 85% / 1);
+
   --dark-pink-dark: hsl(340 70% 60% / 1);
   --pink-light: hsl(320 50% 70% / 1);
   --dark-pink-light: hsl(340 70% 60% / 1);
@@ -90,10 +93,19 @@
     --teal-A400: hsl(165, 82%, 10%);
     --Gray-600: hsl(0, 0%, 70%);
     --Gray-800: #f5f5f5;
+    --orange-600: hsl(42, 100%, 50%);
+    --orange-500: hsl(45, 100%, 51%);
+    --orange-400: hsl(45, 100%, 38%);
+    --orange-300: hsl(46, 100%, 65%);
+    --orange-200: hsl(45, 100%, 75%);
+    --orange-100: hsl(45, 100%, 15%);
     --orange-dark: #f5f5f5;
     --Gray-200: #424242;
     --orange-A700: hsl(45, 100%, 51%);
     --orange-500: hsl(46, 100%, 65%);
+    --pink-dark: hsl(320 50% 50% / 1);
+    --pink-200: hsl(320 50% 50% / 1);
+    --pink-800: hsl(300 80% 70% / 1);
     --pink-dark: hsl(320 50% 50% / 1);
     --dark-pink-dark: hsl(340 70% 60% / 1);
     --pink-transparent: hsl(320 50% 50% / 0.4);

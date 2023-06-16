@@ -62,3 +62,56 @@
   line-height: 1;
   margin: 0;
 }
+
+.note {
+  background-color: var(--orange-100);
+  max-width: 70ch;
+  padding: 0.2rem 2rem;
+  font-size: var(--step--2);
+  font-style: italic;
+  border-radius: 0.5rem;
+  border-left: 0.4rem solid var(--orange-400);
+  position: relative;
+}
+
+q {
+  quotes: '\201c''\201d';
+}
+
+.note::before {
+  content: open-quote;
+  font-family: var(--system-fonts-mono);
+  font-size: var(--step-4);
+  position: absolute;
+  left: -0.2rem;
+  top: 0.5rem;
+  color: var(--orange-600);
+}
+.note::after {
+  content: close-quote;
+  font-family: var(--system-fonts-mono);
+  font-size: var(--step-4);
+  position: absolute;
+  right: 1.2rem;
+  bottom: -1rem;
+  color: var(--orange-600);
+}
+
+.warning {
+  background-color: var(--pink-200);
+  max-width: 70ch;
+  padding: 0.2rem 2rem;
+  font-size: var(--step--2);
+  font-style: italic;
+  border-radius: 0.5rem;
+  border-left: 0.4rem solid var(--pink-800);
+  position: relative;
+}
+
+.thanks {
+  --mono: 'MONO' 1;
+  --casl: 'CASL' 1;
+  font-size: var(--step--3);
+  font-family: RecVar;
+  font-variation-settings: var(--mono), var(--casl), var(--crsv), var(--slnt);
+}

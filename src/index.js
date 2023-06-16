@@ -37,7 +37,3 @@ subheadLinks.forEach((item) => (item.href = ''));
 
 const eye = document.querySelector('.eye');
 const rings = eye.querySelectorAll('path');
-
-eye.addEventListener('mouseover', (e) => {
-  console.log(this);
-});
