@@ -10,10 +10,6 @@ code {
   font-family: var(--system-fonts-mono);
 }
 
-code {
-  white-space: nowrap;
-}
-
 pre {
   width: var(--blog-item-clamp);
   font-size: 10px;
