@@ -72,8 +72,6 @@ module.exports = function (eleventyConfig) {
         return;
       }
 
-      console.log(`path: ${path}`);
-      console.log(`content: ${content}`);
       return async () => {
         let output = await postcss([
           postcssImport,
