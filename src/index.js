@@ -13,14 +13,6 @@ const main = document.querySelector('main');
 const width = window.innerWidth;
 const landingWrapper = document.querySelector('html');
 
-// add _blank target for outside links
-for (let i = 0; i < links.length; i++) {
-  if (links[i].hostname != window.location.hostname) {
-    links[i].classList.add('outside-link');
-    links[i].target = '_blank';
-  }
-}
-
 // set up languages for <pre>
 pres.forEach((item) => {
   let language = item.getAttribute('class').split('-').pop();
