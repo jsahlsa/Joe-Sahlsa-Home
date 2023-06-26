@@ -1,0 +1,55 @@
+.webmention-wrapper {
+  max-width: 60ch;
+}
+
+.webmention-wrapper > h3 {
+  margin-top: 1.5rem;
+  font-size: var(--step--1);
+}
+
+.reply-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  place-items: center;
+}
+
+.reply-container > p {
+  font-size: var(--step--2);
+  line-height: 1.3rem;
+}
+
+.like-of-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 2.5rem);
+}
+
+.webmention-clip-path-wrapper {
+  width: 3rem;
+  height: 3rem;
+  clip-path: url(#clip-path);
+}
+
+.like-of-link {
+  filter: drop-shadow(2px 2px 0px var(--teal-dark))
+    drop-shadow(-2px -2px 0px var(--teal-dark))
+    drop-shadow(2px -2px 0px var(--teal-dark))
+    drop-shadow(-2px 2px 0px var(--teal-dark));
+  transition: transform 0.2s ease-in-out;
+}
+.like-of-link:hover {
+  position: relative;
+  z-index: 1;
+  transform: scale(1.1) translateY(0.2rem) rotate(90deg);
+}
+
+.like-of-link img {
+  transition: transform 0.2s ease-in-out;
+}
+.like-of-link:hover img {
+  transform: rotate(-90deg);
+}
+
+.clip-path-svg-webmention {
+  height: 0.1px;
+}

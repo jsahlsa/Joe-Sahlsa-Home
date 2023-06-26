@@ -1,0 +1,65 @@
+{%- set mentions = webmentions.children | getWebmentionsForUrl(webmentionUrl) -%}
+{%- set mentionsLength = mentions|length -%}
+{% if mentionsLength %}
+<h2>Webmentions</h2>
+<h3>Likes:</h3>
+<ul>
+<div class='like-of-container'>
+{% for webmention in mentions %}
+{% if webmention['wm-property'] == 'like-of' %}
+  <a class="like-of-link" href={{ webmention.author.url }}>
+    <div class='webmention-clip-path-wrapper'>
+    <img class='webmention-image' src={{ webmention.author.photo }} alt={{ webmention.author.name }} />
+    </div>
+  </a>
+{% endif %}
+{% endfor %}
+</div>
+</ul>
+
+<h3>Reposts:</h3>
+
+<ul>
+  <div class='like-of-container'>
+{% for webmention in mentions %}
+{% if webmention['wm-property'] == 'repost-of' %}
+<a class="like-of-link" href={{ webmention.author.url }}>
+    <div class='webmention-clip-path-wrapper'>
+    <img class='webmention-image' src={{ webmention.author.photo }} alt={{ webmention.author.name }} />
+    </div>
+  </a>
+{% endif %}
+{% endfor %}
+</div>
+</ul>
+
+<h3>Replies:</h3>
+<ul>
+{% for webmention in mentions %}
+{% if webmention['wm-property'] == 'in-reply-to' %}
+<div class="reply-container">
+<a class="like-of-link" href={{ webmention.author.url }}>
+    <div class='webmention-clip-path-wrapper'>
+    <img class='webmention-image' src={{ webmention.author.photo }} alt={{ webmention.author.name }} />
+    {%- set inner = webmention | sanitizeHTML -%}
+    </div>
+  </a>
+  <p>{{ webmention | sanitizeHTML | safe }}</p>
+  </div>
+{% endif %}
+{% endfor %}
+</ul>
+{% else %}
+<h2>No Mentions</h2>
+{% endif %}
+<svg viewBox="0 0 200 200" class='clip-path-svg-webmention'>
+      <clipPath id="clip-path" clipPathUnits="objectBoundingBox">
+        <path d="M0.54,0.03L0.6,0.01c0.05-0.02,0.1,0,0.12,0.05l0.03,0.06C0.77,0.14,0.8,0.16,0.82,0.16l0.07,0.02
+                C0.94,0.2,0.97,0.25,0.95,0.3L0.94,0.37c-0.01,0.03,0,0.05,0.01,0.07l0.04,0.06c0.03,0.04,0.02,0.1-0.02,0.13L0.91,0.68
+                C0.89,0.7,0.88,0.72,0.87,0.75L0.86,0.82C0.86,0.87,0.81,0.91,0.76,0.9l-0.07,0c-0.03,0-0.05,0.01-0.07,0.03L0.57,0.97
+                c-0.04,0.03-0.09,0.03-0.13,0L0.38,0.93C0.36,0.91,0.34,0.9,0.31,0.9l-0.07,0c-0.05,0-0.09-0.03-0.1-0.09L0.13,0.75
+                c0-0.03-0.02-0.05-0.04-0.06L0.03,0.64c-0.04-0.03-0.05-0.09-0.02-0.13l0.04-0.06C0.06,0.42,0.07,0.4,0.06,0.37L0.05,0.3
+                C0.03,0.25,0.06,0.2,0.11,0.19l0.07-0.02C0.2,0.16,0.23,0.14,0.24,0.12l0.03-0.06C0.29,0.01,0.35-0.01,0.4,0.01l0.07,0.03
+                C0.49,0.04,0.51,0.04,0.54,0.03z"></path>
+      </clipPath>
+    </svg>

@@ -14,3 +14,8 @@ previousPost %}
 <a class="next-post post-nav" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a
 >{% endif %}
 </div>
+<div class="webmention-wrapper">
+{%- set webmentionUrl -%}{{ page.url | url | absoluteUrl(url) }}{%- endset -%}
+{% include 'webmentions.njk' %}
+</div>
+
