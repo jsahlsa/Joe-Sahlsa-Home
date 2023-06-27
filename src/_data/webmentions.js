@@ -12,7 +12,6 @@ module.exports = async function () {
     const response = await nodeFetch(url);
     if (response.ok) {
       const feed = await response.json();
-      console.log(feed);
       return feed;
     }
   } catch (err) {
