@@ -113,8 +113,9 @@ module.exports = function (eleventyConfig) {
       'in-reply-to',
     ];
 
-    const orderByDate = (a, b) => new Date(a.published) - new Date(b.published);
-
+    const orderByDate = (a, b) => {
+      return new Date(a.published) - new Date(b.published);
+    };
     return webmentions
       .filter((entry) => entry['wm-target'] === url)
       .filter((entry) => allowedTypes.includes(entry['wm-property']))
