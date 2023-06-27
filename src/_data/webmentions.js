@@ -1,3 +1,5 @@
+const fetch = require('node-fetch');
+
 const API_ORIGIN = 'https://webmention.io/api/mentions.jf2';
 require('dotenv').config();
 
