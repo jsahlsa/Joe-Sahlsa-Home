@@ -1,5 +1,6 @@
 {%- set mentions = webmentions.children | getWebmentionsForUrl(webmentionUrl) -%}
 {%- set mentionsLength = mentions|length -%}
+{{ mentionsLength | log }}
 {% if mentionsLength %}
 <h2>Webmentions</h2>
 <h3>Likes:</h3>

@@ -9,9 +9,12 @@ const postcssImport = require('postcss-import');
 const postcssMediaMinmax = require('postcss-media-minmax');
 const autoprefixer = require('autoprefixer');
 const postcssCsso = require('postcss-csso');
-const sanitizeHTML = require('sanitize-html');
+const filters = require('./utils/filters.js');
 
 module.exports = function (eleventyConfig) {
+  Object.keys(filters).forEach((filterName) => {
+    eleventyConfig.addFilter(filterName, filters[filterName]);
+  });
   eleventyConfig.addPlugin(syntaxHighlight, {
     alwaysWrapLineHighlights: true,
     errorOnInvalidLanguage: false,
@@ -100,40 +103,6 @@ module.exports = function (eleventyConfig) {
   // filter to set relative urls to absolute
   eleventyConfig.addFilter('absoluteUrl', (url) => {
     return `https://joesahlsa.dev${url}`;
-  });
-
-  // filter webmentions
-  eleventyConfig.addFilter('getWebmentionsForUrl', (webmentions, url) => {
-    // allowed types
-    const allowedTypes = [
-      'mention-of',
-      'in-reply-of',
-      'like-of',
-      'repost-of',
-      'in-reply-to',
-    ];
-
-    const orderByDate = (a, b) => {
-      return new Date(a.published) - new Date(b.published);
-    };
-    return webmentions
-      .filter((entry) => entry['wm-target'] === url)
-      .filter((entry) => allowedTypes.includes(entry['wm-property']))
-      .sort(orderByDate);
-  });
-
-  eleventyConfig.addFilter('sanitizeHTML', (entry) => {
-    const { html } = entry.content;
-
-    const allowedHTML = {
-      allowedTags: ['b', 'i', 'em', 'strong', 'a'],
-      allowedAttributes: {
-        a: ['href'],
-      },
-    };
-    entry.content.value = sanitizeHTML(html, allowedHTML);
-
-    return entry.content.value;
   });
 
   // filter to exclude tags from posts
