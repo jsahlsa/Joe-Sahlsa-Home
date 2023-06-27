@@ -44,7 +44,7 @@
     {%- set inner = webmention | sanitizeHTML -%}
     </div>
   </a>
-  <p>{{ webmention | sanitizeHTML | safe }}</p>
+  <p>{{ inner | safe }}</p>
   </div>
 {% endif %}
 {% endfor %}
