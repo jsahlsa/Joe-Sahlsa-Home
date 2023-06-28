@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx @11ty/eleventy --serve",
-    "build": "npx @11ty/eleventy",
-    "build:local": "NODE_ENV=production netlify build",
+    "build": "NODE_ENV=production npx @11ty/eleventy",
     "start": "npx @11ty/eleventy --serve",
     "lint": "stylelint 'src/*.css'"
   },

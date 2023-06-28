@@ -1,6 +1,5 @@
 {%- set mentions = webmentions.children | getWebmentionsForUrl(webmentionUrl) -%}
 {%- set mentionsLength = mentions|length -%}
-{{ mentionsLength | log }}
 {% if mentionsLength %}
 <h2>Webmentions</h2>
 <h3>Likes:</h3>
@@ -21,7 +20,7 @@
 <h3>Reposts:</h3>
 
 <ul>
-  <div class='like-of-container'>
+<div class='like-of-container'>
 {% for webmention in mentions %}
 {% if webmention['wm-property'] == 'repost-of' %}
 <a class="like-of-link" href={{ webmention.author.url }}>

@@ -3,21 +3,23 @@ const sanitizeHTML = require('sanitize-html');
 module.exports = {
   getWebmentionsForUrl: function (webmentions, url) {
     // allowed types
-    const allowedTypes = [
-      'mention-of',
-      'in-reply-of',
-      'like-of',
-      'repost-of',
-      'in-reply-to',
-    ];
+    // const allowedTypes = [
+    //   'mention-of',
+    //   'in-reply-of',
+    //   'like-of',
+    //   'repost-of',
+    //   'in-reply-to',
+    // ];
 
     const orderByDate = (a, b) => {
       return new Date(a.published) - new Date(b.published);
     };
-    return webmentions
-      .filter((entry) => entry['wm-target'] === url)
-      .filter((entry) => allowedTypes.includes(entry['wm-property']))
-      .sort(orderByDate);
+    return (
+      webmentions
+        .filter((entry) => entry['wm-target'] === url)
+        // .filter((entry) => allowedTypes.includes(entry['wm-property']))
+        .sort(orderByDate)
+    );
   },
   sanitizeHTML: function (entry) {
     const { html } = entry.content;
