@@ -1,8 +1,8 @@
-{# {%- set mentions = webmentions.children | getWebmentionsForUrl(webmentionUrl) -%}
-{%- set mentionsLength = mentions|length -%} #}
-{% if mentionsLength %}
+{%- set mentions = webmentions.children | getWebmentionsForUrl(webmentionUrl) -%}
+{# {%- set mentionsLength = mentions|length -%}
+{% if mentionsLength %} #}
 <h2>Webmentions</h2>
-{# <h3>Likes:</h3>
+<h3>Likes:</h3>
 <ul>
 <div class='like-of-container'>
 {% for webmention in mentions %}
@@ -48,10 +48,10 @@
   </div>
 {% endif %}
 {% endfor %}
-</ul> #}
-{% else %}
+</ul>
+{# {% else %}
 <h2>No Mentions</h2>
-{% endif %}
+{% endif %} #}
 <svg viewBox="0 0 200 200" class='clip-path-svg-webmention'>
       <clipPath id="clip-path" clipPathUnits="objectBoundingBox">
         <path d="M0.54,0.03L0.6,0.01c0.05-0.02,0.1,0,0.12,0.05l0.03,0.06C0.77,0.14,0.8,0.16,0.82,0.16l0.07,0.02
