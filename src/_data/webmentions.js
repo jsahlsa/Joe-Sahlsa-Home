@@ -9,7 +9,7 @@ module.exports = async function () {
   try {
     const response = await fetch(url);
     if (response.ok) {
-      const feed = await response.json();
+      const feed = await response?.json();
       return feed;
     }
   } catch (err) {

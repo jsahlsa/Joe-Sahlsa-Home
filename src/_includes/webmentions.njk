@@ -41,10 +41,9 @@
 <a class="like-of-link" href={{ webmention.author.url }}>
     <div class='webmention-clip-path-wrapper'>
     <img class='webmention-image' src={{ webmention.author.photo }} alt={{ webmention.author.name }} />
-    {%- set inner = webmention | sanitizeHTML -%}
     </div>
   </a>
-  <p>{{ inner | safe }}</p>
+  <p>{{ webmention.content.text | safe }}</p>
   </div>
 {% endif %}
 {% endfor %}
