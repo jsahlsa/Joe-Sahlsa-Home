@@ -14,7 +14,7 @@ module.exports = {
       return new Date(a.published) - new Date(b.published);
     };
 
-    const data = webmentions
+    const data = webmentions.children
       .filter((entry) => entry['wm-target'] === url)
       .filter((entry) => allowedTypes.includes(entry['wm-property']))
       .sort(orderByDate);

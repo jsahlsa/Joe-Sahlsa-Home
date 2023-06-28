@@ -1,4 +1,4 @@
-{%- set mentions = webmentions.children | getWebmentionsForUrl(webmentionUrl) -%}
+{%- set mentions = webmentions | getWebmentionsForUrl(webmentionUrl) -%}
 {%- set mentionsLength = mentions|length -%}
 {% if mentionsLength %}
 <h2>Webmentions</h2>
