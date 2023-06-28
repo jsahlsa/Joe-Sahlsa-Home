@@ -10,10 +10,15 @@ module.exports = {
     //   'in-reply-to',
     // ];
 
+    const checkRequiredFields = (entry) => {
+      const { author, published, content } = entry;
+      return !!author && !!author.name && !!published && !!content;
+    };
+
     const orderByDate = (a, b) => {
       return new Date(a.published) - new Date(b.published);
     };
-    return webmentions;
+    return webmentions.filter(checkRequiredFields);
     // .filter((entry) => entry['wm-target'] === url)
     // .filter((entry) => allowedTypes.includes(entry['wm-property']))
     // .sort(orderByDate)
