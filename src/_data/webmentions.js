@@ -1,5 +1,3 @@
-const nodeFetch = require('node-fetch');
-
 const API_ORIGIN = 'https://webmention.io/api/mentions.jf2';
 require('dotenv').config();
 
@@ -9,7 +7,7 @@ module.exports = async function () {
   const url = `${API_ORIGIN}?domain=${domain}&token=${token}`;
 
   try {
-    const response = await nodeFetch(url);
+    const response = await fetch(url);
     if (response.ok) {
       const feed = await response.json();
       return feed;
