@@ -13,12 +13,10 @@ module.exports = {
     const orderByDate = (a, b) => {
       return new Date(a.published) - new Date(b.published);
     };
-    return (
-      webmentions
-        // .filter((entry) => entry['wm-target'] === url)
-        // .filter((entry) => allowedTypes.includes(entry['wm-property']))
-        .sort(orderByDate)
-    );
+    return webmentions;
+    // .filter((entry) => entry['wm-target'] === url)
+    // .filter((entry) => allowedTypes.includes(entry['wm-property']))
+    // .sort(orderByDate)
   },
   sanitizeHTML: function (entry) {
     const { html } = entry.content;
