@@ -14,11 +14,12 @@ module.exports = {
       return new Date(a.published) - new Date(b.published);
     };
 
-    const data = webmentions.children
-      .filter((entry) => entry['wm-target'] === url)
-      .filter((entry) => allowedTypes.includes(entry['wm-property']))
-      .sort(orderByDate);
-    return data;
+    console.log(webmentions);
+
+    return webmentions;
+    // .filter((entry) => entry['wm-target'] === url)
+    // .filter((entry) => allowedTypes.includes(entry['wm-property']))
+    // .sort(orderByDate);
   },
   sanitizeHTML: function (entry) {
     const { html } = entry.content;
