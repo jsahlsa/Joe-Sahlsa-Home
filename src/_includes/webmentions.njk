@@ -2,7 +2,7 @@
 {%- set mentionsLength = mentions|length -%}
 {% if mentionsLength %}
 <h2>Webmentions</h2>
-<h3>Likes:</h3>
+{# <h3>Likes:</h3>
 <ul>
 <div class='like-of-container'>
 {% for webmention in mentions %}
@@ -41,13 +41,14 @@
 <a class="like-of-link" href={{ webmention.author.url }}>
     <div class='webmention-clip-path-wrapper'>
     <img class='webmention-image' src={{ webmention.author.photo }} alt={{ webmention.author.name }} />
+    {%- set inner = webmention | sanitizeHTML -%}
     </div>
   </a>
-  <p>{{ webmention.content.text | safe }}</p>
+  <p>{{ inner | safe }}</p>
   </div>
 {% endif %}
 {% endfor %}
-</ul>
+</ul> #}
 {% else %}
 <h2>No Mentions</h2>
 {% endif %}

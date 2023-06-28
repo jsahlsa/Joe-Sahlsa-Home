@@ -1,4 +1,4 @@
-// const sanitizeHTML = require('sanitize-html');
+const sanitizeHTML = require('sanitize-html');
 
 module.exports = {
   getWebmentionsForUrl: function (webmentions, url) {
@@ -18,17 +18,17 @@ module.exports = {
       .filter((entry) => allowedTypes.includes(entry['wm-property']))
       .sort(orderByDate);
   },
-  // sanitizeHTML: function (entry) {
-  //   const { html } = entry.content;
+  sanitizeHTML: function (entry) {
+    const { html } = entry.content;
 
-  //   const allowedHTML = {
-  //     allowedTags: ['b', 'i', 'em', 'strong', 'a'],
-  //     allowedAttributes: {
-  //       a: ['href'],
-  //     },
-  //   };
-  //   entry.content.value = sanitizeHTML(html, allowedHTML);
+    const allowedHTML = {
+      allowedTags: ['b', 'i', 'em', 'strong', 'a'],
+      allowedAttributes: {
+        a: ['href'],
+      },
+    };
+    entry.content.value = sanitizeHTML(html, allowedHTML);
 
-  //   return entry.content.value;
-  // },
+    return entry.content.value;
+  },
 };
