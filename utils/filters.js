@@ -32,8 +32,8 @@ module.exports = {
 
     return entry.content.value;
   },
-  mentionByUrl: function (mentions, siteUrl) {
-    const filteredMentions = mentions.filter(
+  mentionByUrl: async function (mentions, siteUrl) {
+    const filteredMentions = await mentions.filter(
       (item) => item['wm-target'] === siteUrl
     );
     return filteredMentions;
