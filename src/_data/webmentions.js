@@ -6,14 +6,10 @@ module.exports = async function () {
   const token = process.env.WEBMENTION_ID_TOKEN;
   const url = `${API_ORIGIN}?domain=${domain}&token=${token}`;
 
-  try {
-    const response = await fetch(url);
-    if (response.ok) {
-      const feed = await response.json();
-      return feed;
-    }
-  } catch (err) {
-    console.error(err);
-    return [];
+  const response = await fetch(url);
+  if (response.ok) {
+    const feed = await response.json();
+    return feed;
   }
+  return null;
 };
