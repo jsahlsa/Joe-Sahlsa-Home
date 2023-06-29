@@ -14,8 +14,6 @@ module.exports = {
       return new Date(a.published) - new Date(b.published);
     };
 
-    console.log(webmentions);
-
     return webmentions;
     // .filter((entry) => entry['wm-target'] === url)
     // .filter((entry) => allowedTypes.includes(entry['wm-property']))
@@ -33,5 +31,11 @@ module.exports = {
     entry.content.value = sanitizeHTML(html, allowedHTML);
 
     return entry.content.value;
+  },
+  mentionByUrl: function (mentions, siteUrl) {
+    const filteredMentions = mentions.filter(
+      (item) => item['wm-target'] === siteUrl
+    );
+    return filteredMentions;
   },
 };

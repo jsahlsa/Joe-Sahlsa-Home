@@ -1,6 +1,6 @@
-{%- set mentions = webmentions.children | getWebmentionsForUrl(webmentionUrl) -%}
-{%- set mentionsLength = mentions|length -%}
-{% if mentionsLength %}
+{%- set siteUrl = page.url | absoluteUrl -%}
+{%- set mentions = webmentions.children | mentionByUrl(siteUrl) -%}
+{% if mentions | length %}
 <h2>Webmentions</h2>
 <h3>Likes:</h3>
 <ul>
