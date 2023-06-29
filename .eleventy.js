@@ -96,6 +96,27 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.setDataDeepMerge(true);
 
+  eleventyConfig.addAsyncFilter(
+    'getWebmentionsForUrl',
+    async function (webmentions, url) {
+      const allowedTypes = [
+        'mention-of',
+        'in-reply-of',
+        'like-of',
+        'repost-of',
+        'in-reply-to',
+      ];
+
+      const orderByDate = (a, b) => {
+        return new Date(a.published) - new Date(b.published);
+      };
+
+      return webmentions.filter((entry) => entry['wm-target'] === url);
+      // .filter((entry) => allowedTypes.includes(entry['wm-property']))
+      // .sort(orderByDate);
+    }
+  );
+
   eleventyConfig.addFilter('postDate', (dateObj) => {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
   });
