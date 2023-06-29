@@ -10,6 +10,9 @@ const postcssMediaMinmax = require('postcss-media-minmax');
 const autoprefixer = require('autoprefixer');
 const postcssCsso = require('postcss-csso');
 const filters = require('./utils/filters.js');
+const EleventyFetch = require('@11ty/eleventy-fetch');
+const API_ORIGIN = 'https://webmention.io/api/mentions.jf2';
+require('dotenv').config();
 
 module.exports = function (eleventyConfig) {
   Object.keys(filters).forEach((filterName) => {
@@ -96,26 +99,28 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.setDataDeepMerge(true);
 
-  eleventyConfig.addAsyncFilter(
-    'getWebmentionsForUrl',
-    async function (webmentions, url) {
-      const allowedTypes = [
-        'mention-of',
-        'in-reply-of',
-        'like-of',
-        'repost-of',
-        'in-reply-to',
-      ];
+  eleventyConfig.addAsyncFilter('getWebmentionsForUrl', async function (url) {
+    const res = await fetchWebmentions();
+    const allowedTypes = [
+      'mention-of',
+      'in-reply-of',
+      'like-of',
+      'repost-of',
+      'in-reply-to',
+    ];
 
-      const orderByDate = (a, b) => {
-        return new Date(a.published) - new Date(b.published);
-      };
-
-      return await webmentions.filter((entry) => entry['wm-target'] === url);
-      // .filter((entry) => allowedTypes.includes(entry['wm-property']))
-      // .sort(orderByDate);
+    const orderByDate = (a, b) => {
+      return new Date(a.published) - new Date(b.published);
+    };
+    const data = res.children;
+    if (!res) {
+      return '';
     }
-  );
+    return data
+      .filter((entry) => entry['wm-target'] === url)
+      .filter((entry) => allowedTypes.includes(entry['wm-property']))
+      .sort(orderByDate);
+  });
 
   eleventyConfig.addFilter('postDate', (dateObj) => {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
@@ -166,3 +171,14 @@ module.exports = function (eleventyConfig) {
     },
   };
 };
+
+async function fetchWebmentions() {
+  const domain = 'joesahlsa.dev';
+  const token = process.env.WEBMENTION_ID_TOKEN;
+  const url = `${API_ORIGIN}?domain=${domain}&token=${token}`;
+
+  return EleventyFetch(url, {
+    duration: '1d',
+    type: 'json',
+  });
+}

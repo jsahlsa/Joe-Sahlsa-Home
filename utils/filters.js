@@ -14,10 +14,4 @@ module.exports = {
 
     return entry.content.value;
   },
-  mentionByUrl: function (mentions, siteUrl) {
-    const filteredMentions = mentions.filter(
-      (item) => item['wm-target'] === siteUrl
-    );
-    return filteredMentions;
-  },
 };
