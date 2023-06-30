@@ -174,9 +174,9 @@ module.exports = function (eleventyConfig) {
 
 async function fetchWebmentions() {
   const domain = 'joesahlsa.dev';
-  const token = process.env.WEBMENTION_ID_TOKEN;
-  const url = `${API_ORIGIN}?domain=${domain}&token=${token}`;
-
+  const WEBMENTION_ID_TOKEN = process.env.WEBMENTION_ID_TOKEN;
+  const url = `${API_ORIGIN}?domain=${domain}&token=${WEBMENTION_ID_TOKEN}`;
+  console.log(url);
   return EleventyFetch(url, {
     duration: '1d',
     type: 'json',
