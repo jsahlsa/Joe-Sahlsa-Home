@@ -7,7 +7,7 @@
 <div class='like-of-container'>
 {% for webmention in mentions %}
 {% if webmention['wm-property'] == 'like-of' %}
-  <a class="like-of-link" href={{ webmention.author.url }}>
+  <a class="like-of-link" href={{ webmention.author.url }} target='_blank' rel='noopener noreferrer'>
     <div class='webmention-clip-path-wrapper'>
     <img class='webmention-image' src={{ webmention.author.photo }} alt={{ webmention.author.name }} />
     </div>

@@ -15,8 +15,13 @@
 }
 
 .reply-container > p {
-  font-size: var(--step--2);
+  font-size: var(--step--3);
   line-height: 1.3rem;
+  margin-top: 0;
+  word-break: break-all;
+}
+.reply-container > p > a {
+  text-decoration-thickness: 0.08rem;
 }
 
 .like-of-container {
@@ -48,6 +53,10 @@
 }
 .like-of-link:hover img {
   transform: rotate(-90deg);
+}
+
+.webmention-reply-text {
+  margin-top: 0;
 }
 
 .clip-path-svg-webmention {
