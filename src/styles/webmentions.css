@@ -18,10 +18,13 @@
   font-size: var(--step--3);
   line-height: 1.3rem;
   margin-top: 0;
-  word-break: break-all;
+  word-break: break-word;
 }
 .reply-container > p > a {
   text-decoration-thickness: 0.08rem;
+}
+.reply-container > .like-of-link {
+  align-self: start;
 }
 
 .like-of-container {
