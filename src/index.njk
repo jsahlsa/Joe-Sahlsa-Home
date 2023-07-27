@@ -19,7 +19,9 @@ title: Joe Sahlsa
       </div>
       <div class="recent-post-wrapper">
         <h3 class="recent-post-header">recent:</h3>
+        {% set top = 3 %}
         {% for post in collections.blog | reverse %}
+        {% if (loop.index <= top) and (top <= loop.length) %}
         <a href="{{ post.url }}" class="recent-link">
           <li class="recent-item">
             <div>
@@ -36,6 +38,7 @@ title: Joe Sahlsa
             </ul>
           </li>
         </a>
+        {% endif %}
         {% endfor %}
       </div>
     </div>

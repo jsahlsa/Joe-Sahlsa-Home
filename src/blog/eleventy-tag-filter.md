@@ -2,7 +2,7 @@
 title: Eleventy tag filter
 subtitle: Use eleventy filter to exclude unwanted tags
 tags:
-  - snippet
+  - blog
   - 11ty
 templateEngineOverride: njk, md
 ---

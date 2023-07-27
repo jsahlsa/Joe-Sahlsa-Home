@@ -26,25 +26,3 @@ tags: pages
 {% endfor %}
 </ul>
 
-<h5>Snippets:</h5>
-
-<ul class="blog posts">
-{% for snippet in collections.snippet %}
-<a href="{{ snippet.url }}" class="blog post">
-<li>
-<div>
-<h4 class="post-title">{{ snippet.data.title }}</h4> <p class='blog-list dates'>{{ snippet.date | postDate }}<p>
-</div>
-<ul class="blog-tags">
-{% set tags = snippet.data.tags | exclude('snippet') %}
-
-{% for tag in tags %}
-<li>
-{{ tag | lower }}
-</li>
-{% endfor %}
-</ul>
-</li>
-</a>
-{% endfor %}
-</ul>

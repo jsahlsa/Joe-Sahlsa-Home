@@ -1,6 +1,6 @@
 ---
 title: Remove files added before .gitignore
-tags: snippet
+tags: blog
 eleventyExcludeFromCollections: true
 ---
 
