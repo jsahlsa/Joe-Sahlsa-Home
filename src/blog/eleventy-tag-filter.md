@@ -4,6 +4,7 @@ subtitle: Use eleventy filter to exclude unwanted tags
 tags:
   - blog
   - 11ty
+date: 2023-06-16
 templateEngineOverride: njk, md
 ---
 

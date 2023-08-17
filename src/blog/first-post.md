@@ -3,6 +3,7 @@ title: First Post
 tags:
   - blog
   - 11ty
+date: 2022-06-02
 description: 'A little about how this site came to be'
 ---
 
