@@ -17,7 +17,25 @@
     Front-end Developer{% else %}{{
       title
     }}{% endif %} />
+    <title>{% if page.url == "/" %}Joe Sahlstrom •
+    Front-end Developer{% else %}{{
+      title
+    }}{% endif %} </title>
     <meta property="og:url" content={{ page.url }} />
+    {%- set siteUrl = page.url | absoluteUrl -%}
+    {# create og images #}
+    {% set ogUrl = siteUrl | ogimage %}
+    
+    {% if ogUrl %}
+    <meta
+      property="og:image"
+      content="https://joesahlsa.dev/img/social-preview-images/{{ title | slugify }}-1.jpeg"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://joesahlsa.dev/img/social-preview-images/{{ title | slugify }}-1.jpeg"
+    />
+    {% else %}
     <meta
       property="og:image"
       content="https://joesahlsa.dev/images/og-image.jpg"
@@ -26,6 +44,7 @@
       property="og:image:secure_url"
       content="https://joesahlsa.dev/images/og-image.jpg"
     />
+    {% endif %}
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@joesahlsa" />

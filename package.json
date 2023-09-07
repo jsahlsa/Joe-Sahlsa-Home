@@ -39,14 +39,16 @@
     "postcss-media-minmax": "^5.0.0",
     "postcss-preset-env": "^7.0.1",
     "prettier": "^2.4.1",
-    "slugify": "^1.6.3",
+    "slugify": "^1.6.6",
     "stylelint": "^14.1.0"
   },
   "dependencies": {
+    "@11ty/eleventy-img": "^3.1.0",
     "dotenv": "^16.3.1",
     "file-size": "^1.0.0",
     "postcss-csso": "^6.0.1",
     "postcss-import": "^15.1.0",
-    "sanitize-html": "^2.11.0"
+    "sanitize-html": "^2.11.0",
+    "sharp": "^0.32.5"
   }
 }

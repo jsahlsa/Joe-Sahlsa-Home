@@ -13,6 +13,10 @@ const filters = require('./utils/filters.js');
 const EleventyFetch = require('@11ty/eleventy-fetch');
 const API_ORIGIN = 'https://webmention.io/api/mentions.jf2';
 require('dotenv').config();
+const Image = require('@11ty/eleventy-img');
+const Sharp = require('sharp');
+const fs = require('fs');
+const slugify = require('slugify');
 
 module.exports = function (eleventyConfig) {
   Object.keys(filters).forEach((filterName) => {
@@ -98,7 +102,65 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/images');
 
   eleventyConfig.setDataDeepMerge(true);
+  // get og images
+  eleventyConfig.addAsyncFilter('ogimage', async function (url) {
+    // get image from screenshot service and save to /img/og-images
+    // convert to uri component
+    const encoded = encodeURIComponent(url);
+    // compose screenshot url
+    const screenshotUrl = `https://v1.screenshot.11ty.dev/${encoded}/large/`;
+    // set output dir
+    const outputDir = '_site/img/social-preview-images';
+    fs.readdir(outputDir, function (err, files) {
+      if (files.length > 0) {
+        files.forEach(function (filename) {
+          if (filename.endsWith('1.jpeg')) {
+            fs.unlink(filename);
+          }
+        });
+      }
+    });
+    if (url.substring(22, 26) === 'blog') {
+      let metadata = await Image(screenshotUrl, {
+        widths: [1024],
+        formats: ['jpeg'],
+        outputDir: './' + outputDir,
+        filenameFormat: function (id, src, width, format, options) {
+          const minusService = src.substring(31, src.length - 1);
+          const minusSize = minusService.slice(0, -6);
+          const deencoded = decodeURIComponent(minusSize);
+          const removeFront = deencoded.substring(27, deencoded.length - 1);
+          return `${removeFront}.${format}`;
+        },
+      });
+    }
+    return url.substring(22, 26) === 'blog' ? true : false;
+  });
+  // process og images
+  eleventyConfig.on('afterBuild', () => {
+    const socialImagesDir = '_site/img/social-preview-images/';
+    fs.readdir(socialImagesDir, function (err, files) {
+      if (files.length > 0) {
+        files.forEach(function (filename) {
+          if (!filename.endsWith('1.jpeg')) {
+            const outputName = `${filename.slice(0, -5)}`;
+            const slugified = `${slugify(outputName, {
+              remove: /[*+~.()"!:@]/g,
+            }).replace("'", '-')}-1.jpeg`;
+            console.log('filename: ' + slugified);
+            Sharp(`${socialImagesDir}${filename}`)
+              .resize(1200, 630, {
+                fit: 'cover',
+                position: 'top',
+              })
+              .toFile(`${socialImagesDir}${slugified}`, (err, info) => {});
+          }
+        });
+      }
+    });
+  });
 
+  // webmention filter
   eleventyConfig.addAsyncFilter('getWebmentionsForUrl', async function (url) {
     const res = await fetchWebmentions();
     const allowedTypes = [
