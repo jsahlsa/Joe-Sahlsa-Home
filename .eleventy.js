@@ -112,13 +112,11 @@ module.exports = function (eleventyConfig) {
     // set output dir
     const outputDir = '_site/img/social-preview-images';
     fs.readdir(outputDir, function (err, files) {
-      if (files.length > 0) {
-        files.forEach(function (filename) {
-          if (filename.endsWith('1.jpeg')) {
-            fs.unlink(filename);
-          }
-        });
-      }
+      files.forEach(function (filename) {
+        if (filename.endsWith('1.jpeg')) {
+          fs.unlink(filename);
+        }
+      });
     });
     if (url.substring(22, 26) === 'blog') {
       let metadata = await Image(screenshotUrl, {
@@ -140,23 +138,20 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.on('afterBuild', () => {
     const socialImagesDir = '_site/img/social-preview-images/';
     fs.readdir(socialImagesDir, function (err, files) {
-      if (files.length > 0) {
-        files.forEach(function (filename) {
-          if (!filename.endsWith('1.jpeg')) {
-            const outputName = `${filename.slice(0, -5)}`;
-            const slugified = `${slugify(outputName, {
-              remove: /[*+~.()"!:@]/g,
-            }).replace("'", '-')}-1.jpeg`;
-            console.log('filename: ' + slugified);
-            Sharp(`${socialImagesDir}${filename}`)
-              .resize(1200, 630, {
-                fit: 'cover',
-                position: 'top',
-              })
-              .toFile(`${socialImagesDir}${slugified}`, (err, info) => {});
-          }
-        });
-      }
+      files.forEach(function (filename) {
+        if (!filename.endsWith('1.jpeg')) {
+          const outputName = `${filename.slice(0, -5)}`;
+          const slugified = `${slugify(outputName, {
+            remove: /[*+~.()"!:@]/g,
+          }).replace("'", '-')}-1.jpeg`;
+          Sharp(`${socialImagesDir}${filename}`)
+            .resize(1200, 630, {
+              fit: 'cover',
+              position: 'top',
+            })
+            .toFile(`${socialImagesDir}${slugified}`, (err, info) => {});
+        }
+      });
     });
   });
 
