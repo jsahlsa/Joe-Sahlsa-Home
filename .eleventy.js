@@ -112,11 +112,23 @@ module.exports = function (eleventyConfig) {
     // set output dir
     const outputDir = '_site/img/social-preview-images';
     fs.readdir(outputDir, function (err, files) {
-      files.forEach(function (filename) {
-        if (filename.endsWith('1.jpeg')) {
-          fs.unlink(filename);
+      if (err) {
+        console.error(err);
+      } else {
+        if (files.length > 0) {
+          files.forEach(function (filename) {
+            if (filename.endsWith('1.jpeg')) {
+              fs.unlink(`./${outputDir}/${filename}`, (err) => {
+                if (err) {
+                  console.error(err);
+                } else {
+                  console.log('old og images deleted');
+                }
+              });
+            }
+          });
         }
-      });
+      }
     });
     if (url.substring(22, 26) === 'blog') {
       let metadata = await Image(screenshotUrl, {
@@ -138,20 +150,22 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.on('afterBuild', () => {
     const socialImagesDir = '_site/img/social-preview-images/';
     fs.readdir(socialImagesDir, function (err, files) {
-      files.forEach(function (filename) {
-        if (!filename.endsWith('1.jpeg')) {
-          const outputName = `${filename.slice(0, -5)}`;
-          const slugified = `${slugify(outputName, {
-            remove: /[*+~.()"!:@]/g,
-          }).replace("'", '-')}-1.jpeg`;
-          Sharp(`${socialImagesDir}${filename}`)
-            .resize(1200, 630, {
-              fit: 'cover',
-              position: 'top',
-            })
-            .toFile(`${socialImagesDir}${slugified}`, (err, info) => {});
-        }
-      });
+      if (files.length > 0) {
+        files.forEach(function (filename) {
+          if (!filename.endsWith('1.jpeg')) {
+            const outputName = `${filename.slice(0, -5)}`;
+            const slugified = `${slugify(outputName, {
+              remove: /[*+~.()"!:@]/g,
+            }).replace("'", '-')}-1.jpeg`;
+            Sharp(`${socialImagesDir}${filename}`)
+              .resize(1200, 630, {
+                fit: 'cover',
+                position: 'top',
+              })
+              .toFile(`${socialImagesDir}${slugified}`, (err, info) => {});
+          }
+        });
+      }
     });
   });
 
