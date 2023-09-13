@@ -13,14 +13,9 @@
     />
     <meta name="author" content="Joe Sahlstrom" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content={% if page.url == "/" %}Joe Sahlstrom •
-    Front-end Developer{% else %}{{
-      title
-    }}{% endif %} />
+    <meta property="og:title" content="{% if page.url == "/" %}Joe Sahlstrom • Front-end Developer{% else %}{{ title }}{% endif %}" />
     <title>{% if page.url == "/" %}Joe Sahlstrom •
-    Front-end Developer{% else %}{{
-      title
-    }}{% endif %} </title>
+    Front-end Developer{% else %}{{ title }}{% endif %}</title>
     <meta property="og:url" content={{ page.url }} />
     {%- set siteUrl = page.url | absoluteUrl -%}
     {# create og images #}

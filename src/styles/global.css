@@ -103,6 +103,7 @@ h1 {
   color: var(--orange-A700);
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   max-width: 15ch;
+  width: max-content;
 }
 
 h1:hover {
@@ -133,12 +134,12 @@ h2 {
   color: var(--orange-600);
 }
 
-h5 {
+h3 {
   --mono: 'MONO' 1;
   color: var(--orange-600);
   font-weight: 800;
   margin: 1em 0 0.5em 0;
-  font-size: var(--step-1);
+  font-size: var(--step-3);
   font-variation-settings: var(--mono), var(--casl);
 }
 
