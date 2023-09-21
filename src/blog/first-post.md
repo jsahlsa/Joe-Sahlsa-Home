@@ -1,5 +1,5 @@
 ---
-title: First Post
+title: First post
 tags:
   - blog
   - 11ty

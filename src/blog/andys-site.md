@@ -1,5 +1,5 @@
 ---
-title: Andy's Site
+title: Andy's site
 tags:
   - blog
   - Next.js
