@@ -16,7 +16,7 @@
 
 .reply-container > p {
   font-size: var(--step--3);
-  line-height: 1.3rem;
+  line-height: 1.1rem;
   margin-top: 0;
   word-break: break-word;
 }

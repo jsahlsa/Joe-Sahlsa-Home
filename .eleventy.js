@@ -113,14 +113,13 @@ module.exports = function (eleventyConfig) {
     const outputDir = '_site/img/social-preview-images';
     fs.readdir(outputDir, function (err, files) {
       if (err) {
-        console.error(err);
+        console.error('error');
       } else {
         if (files.length > 0) {
           files.forEach(function (filename) {
             if (filename.endsWith('1.jpeg')) {
               fs.unlink(`./${outputDir}/${filename}`, (err) => {
                 if (err) {
-                  console.error(err);
                 } else {
                   console.log('old og images deleted');
                 }
@@ -194,7 +193,10 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter('postDate', (dateObj) => {
-    return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
+    console.log('Date: ' + dateObj);
+    return DateTime.fromJSDate(dateObj, {
+      zone: 'America/Los_Angeles',
+    }).toLocaleString(DateTime.DATE_MED);
   });
 
   // filter to set relative urls to absolute
