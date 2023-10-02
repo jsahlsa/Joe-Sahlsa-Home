@@ -66,6 +66,7 @@ module.exports = function (eleventyConfig) {
           alias: 'keyword',
         },
       };
+      Prism.languages.nunjucks = Prism.languages.njk;
     },
   });
 

@@ -108,6 +108,13 @@ q {
   position: relative;
 }
 
+.warning > p > a {
+  color: var(--gray-800);
+}
+.warning > p > code {
+  border: var(--pink-800) solid 1px;
+}
+
 .thanks {
   --mono: 'MONO' 1;
   --casl: 'CASL' 1;

@@ -16,7 +16,6 @@ const landingWrapper = document.querySelector('html');
 // set up languages for <pre>
 pres.forEach((item) => {
   let language = item.getAttribute('class').split('-').pop();
-  language === 'js' ? (language = 'javascript') : language;
   const languageSpan = document.createElement('span');
   languageSpan.setAttribute('class', 'language-name');
   languageSpan.textContent = language;

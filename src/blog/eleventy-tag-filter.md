@@ -45,7 +45,7 @@ eleventyConfig.addFilter('exclude', (collection, stringToFilter) => {
 
 You would use the filter like so in your `.njk` file:
 
-```nunjucks
+```njk
 {% raw %}{# set tags variable, then filter unwanted tag(s), then loop over the array #}
 {% set tags = post.data.tags | exclude('blog') %}
 {% for tag in tags %}

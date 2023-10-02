@@ -52,6 +52,15 @@ p {
   max-width: 60ch;
 }
 
+p > strong {
+  font-weight: 700;
+}
+p > em {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
 ul,
 ol {
   color: var(--Gray-800);
