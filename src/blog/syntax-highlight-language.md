@@ -101,7 +101,7 @@ eleventyConfig.addPlugin(syntaxHighlight, {
 
 I did not add the hooks below, because I honestly could not figure out what they do, and it turns out you don't need them to get up and running.
 
-After perusing the Prism docs some more I found a more elegant way to acheive the same result by extending an existing language. It would look something like this:
+<!-- After perusing the Prism docs some more I found a more elegant way to acheive the same result by extending an existing language. It would look something like this:
 
 ```js
 Prism.languages['nunjucks'] = Prism.languages.extend('liquid', {
@@ -109,11 +109,11 @@ Prism.languages['nunjucks'] = Prism.languages.extend('liquid', {
 });
 ```
 
-Just declare your new language as the language you would like to [extend](https://prismjs.com/docs/Prism.languages.html#.extend), with a second argument that either redefines, or takes new tokens.
+Just declare your new language as the language you would like to [extend](https://prismjs.com/docs/Prism.languages.html#.extend), with a second argument that either redefines, or takes new tokens. -->
 
 Now I can do something like this:
 
-```njk
+```nunjucks
 {% raw %}
 {% if ogUrl %}
     <meta
