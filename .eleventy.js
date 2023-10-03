@@ -26,7 +26,7 @@ module.exports = function (eleventyConfig) {
     alwaysWrapLineHighlights: true,
     errorOnInvalidLanguage: false,
     init: function ({ Prism }) {
-      Prism.languages.nunjucks = {
+      Prism.languages['nunjucks'] = {
         comment: /^\{#[\s\S]*?#\}/,
         delimiter: {
           pattern: /^\{(?:\{\{|[%\{])-?|-?(?:\}\}|[%\}])\}$/,
@@ -66,7 +66,6 @@ module.exports = function (eleventyConfig) {
           alias: 'keyword',
         },
       };
-      Prism.languages.nunjucks = Prism.languages.njk;
     },
   });
 
