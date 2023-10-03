@@ -2,7 +2,7 @@
 title: Custom language syntax highlighting
 tags:
   - blog
-  - eleventy
+  - 11ty
   - Prism
 date: 2023-09-16
 description: "How to (crudely) add a custom language to Eleventy's syntax highlighting plugin"
@@ -55,7 +55,7 @@ eleventyConfig.addPlugin(syntaxHighlight, {
   alwaysWrapLineHighlights: true,
   errorOnInvalidLanguage: false,
   init: function ({ Prism }) {
-    Prism.languages.nunjucks = {
+    Prism.languages['nunjucks'] = {
       comment: /^\{#[\s\S]*?#\}/,
       delimiter: {
         pattern: /^\{(?:\{\{|[%\{])-?|-?(?:\}\}|[%\}])\}$/,
@@ -114,8 +114,7 @@ Just declare your new language as the language you would like to [extend](https:
 Now I can do something like this:
 
 ```nunjucks
-{% raw %}
-{% if ogUrl %}
+{% raw %}{% if ogUrl %}
     <meta
       property="og:image"
       content="https://joesahlsa.dev/img/social-preview-images/{{ title | slugify }}-1.jpeg"
