@@ -1,6 +1,7 @@
 ---
 title: Eleventy tag filter
 subtitle: Use eleventy filter to exclude unwanted tags
+description: 'Use eleventy filter to hide unwanted tags'
 tags:
   - blog
   - 11ty

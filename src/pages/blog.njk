@@ -7,12 +7,12 @@ tags: pages
 <h3>Posts:</h3>
 
 <ul class="blog posts">
-{% for post in collections.blog %}
+{% for post in collections.blog | reverse %}
 <a href="{{ post.url }}" class="blog post">
 <li>
-<div>
-<h4 class="post-title">{{ post.data.title }}</h4> <p class='blog-list dates'>{{ post.date | postDate }}<p>
-</div>
+<h4 class="post-title">{{ post.data.title }}</h4> 
+<div class="date-tag-container">
+<p class='blog-list dates'>{{ post.date | postDate }}<p>
 <ul class="blog-tags">
 {% set tags = post.data.tags | exclude('blog') %}
 {% for tag in tags %}
@@ -21,6 +21,8 @@ tags: pages
 </li>
 {% endfor %}
 </ul>
+</div>
+<p class="post-description">{{ post.data.description }}</p>
 </li>
 </a>
 {% endfor %}

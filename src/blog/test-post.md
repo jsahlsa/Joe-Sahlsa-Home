@@ -5,6 +5,7 @@ tags:
   - yaml
   - 11ty
 date: 2022-05-27
+eleventyExcludeFromCollections: true
 ---
 
 # {{ title }}
