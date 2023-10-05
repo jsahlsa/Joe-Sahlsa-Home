@@ -6,7 +6,6 @@ tags:
   - Prism
 date: 2023-09-16
 description: "How to (crudely) add a custom language to Eleventy's syntax highlighting plugin"
-# eleventyExcludeFromCollections: true
 ---
 
 # {{ title | capitalize }}
