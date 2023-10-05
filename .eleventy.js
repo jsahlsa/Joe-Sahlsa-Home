@@ -107,6 +107,7 @@ module.exports = function (eleventyConfig) {
     // get image from screenshot service and save to /img/og-images
     // convert to uri component
     const encoded = encodeURIComponent(url);
+    console.log(encoded);
     // compose screenshot url
     const screenshotUrl = `https://v1.screenshot.11ty.dev/${encoded}/large/`;
     // set output dir
@@ -156,6 +157,7 @@ module.exports = function (eleventyConfig) {
             const slugified = `${slugify(outputName, {
               remove: /[*+~.()"!:@]/g,
             }).replace("'", '-')}-1.jpeg`;
+            console.log(slugified);
             Sharp(`${socialImagesDir}${filename}`)
               .resize(1200, 630, {
                 fit: 'cover',
