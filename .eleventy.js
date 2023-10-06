@@ -107,9 +107,15 @@ module.exports = function (eleventyConfig) {
     // get image from screenshot service and save to /img/og-images
     // convert to uri component
     const encoded = encodeURIComponent(url);
-    console.log(encoded);
+    // make cache buster
+    let date = new Date();
+    const cacheBuster =
+      date.getFullYear().toString() +
+      date.getMonth().toString() +
+      date.getSeconds().toString();
+    console.log('buster: ' + cacheBuster);
     // compose screenshot url
-    const screenshotUrl = `https://v1.screenshot.11ty.dev/${encoded}/large/`;
+    const screenshotUrl = `https://v1.screenshot.11ty.dev/${encoded}/large/_${cacheBuster}/`;
     // set output dir
     const outputDir = '_site/img/social-preview-images';
     fs.readdir(outputDir, function (err, files) {
@@ -137,7 +143,7 @@ module.exports = function (eleventyConfig) {
         outputDir: './' + outputDir,
         filenameFormat: function (id, src, width, format, options) {
           const minusService = src.substring(31, src.length - 1);
-          const minusSize = minusService.slice(0, -6);
+          const minusSize = minusService.slice(0, -15);
           const deencoded = decodeURIComponent(minusSize);
           const removeFront = deencoded.substring(27, deencoded.length - 1);
           return `${removeFront}.${format}`;
