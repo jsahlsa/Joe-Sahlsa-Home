@@ -1,144 +1,146 @@
 /* specific blog items */
 .blog.posts {
-  display: grid;
-  gap: 0.1rem;
-  padding: 0;
-  list-style: none;
+    display: grid;
+    gap: 0.1rem;
+    padding: 0;
+    list-style: none;
 }
 
 .blog.post {
-  display: grid;
-  align-content: space-between;
-  text-decoration: none;
-  width: clamp(300px, 30rem, 90vw);
-  transition: transform 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: grid;
+    align-content: space-between;
+    text-decoration: none;
+    width: clamp(300px, 30rem, 90vw);
+    transition: transform 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .post-description {
-  --casl: 'CASL' 1;
-  --mono: 'MONO' 0;
-  --crsv: 'CRSV' 0;
-  --slnt: 'slnt' -11;
-  --wght: 'wght' 100;
-  margin-top: -0.5rem;
-  font-size: var(--step--2);
-  font-family: RecVar, var(--system-fonts-mono);
-  font-variation-settings: var(--mono), var(--casl), var(--crsv), var(--slnt),
-    var(--wght);
+    --casl: 'CASL' 1;
+    --mono: 'MONO' 0;
+    --crsv: 'CRSV' 0;
+    --slnt: 'slnt' -11;
+    --wght: 'wght' 100;
+    margin-top: -0.5rem;
+    font-size: var(--step--2);
+    font-family: RecVar, var(--system-fonts-mono);
+    font-variation-settings: var(--mono), var(--casl), var(--crsv), var(--slnt),
+        var(--wght);
 }
 
 .date-tag-container {
-  display: grid;
-  grid-template-columns: max-content max-content;
-  align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    width: fit-content;
 }
 
 .post-title {
-  font-size: var(--step--1);
-  width: max-content;
-  max-width: 90vw;
-  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  text-decoration-thickness: 3px;
-  text-underline-offset: 3px;
-  text-decoration-line: underline;
+    font-size: var(--step--1);
+    width: max-content;
+    max-width: 90vw;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 3px;
+    text-decoration-line: underline;
 }
 .post-title:hover {
-  text-underline-offset: 8px;
+    text-underline-offset: 8px;
 }
 
 .blog-list.dates + p {
-  display: none;
+    display: none;
 }
 .blog-list.dates {
-  font-size: var(--step--3);
-  margin: 0;
-  margin-right: 0.7rem;
+    font-size: var(--step--3);
+    margin: 0;
+    margin-right: 0.7rem;
 }
 
 .blog-tags {
-  list-style: none;
-  display: flex;
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: fit-content;
 }
 .blog-tags > * {
-  font-family: var(--system-fonts-mono);
-  font-size: var(--step--4);
-  background: var(--teal-A700);
-  color: var(--Gray-50);
-  border-radius: 2em;
-  line-height: 1em;
-  margin-left: 0.2rem;
-  padding: 0.4em;
+    font-family: var(--system-fonts-mono);
+    font-size: var(--step--4);
+    background: var(--teal-A700);
+    color: var(--Gray-50);
+    border-radius: 2em;
+    line-height: 1em;
+    margin-left: 0.2rem;
+    padding: 0.4em;
 }
 
 .page-dates {
-  color: var(--Gray-50);
-  font-size: var(--step--3);
-  text-transform: uppercase;
-  background: var(--teal-dark);
-  width: max-content;
-  padding: 0.3rem 0.3rem 0.2rem 0.3rem;
-  line-height: 1;
-  margin: 0;
+    color: var(--Gray-50);
+    font-size: var(--step--3);
+    text-transform: uppercase;
+    background: var(--teal-dark);
+    width: max-content;
+    padding: 0.3rem 0.3rem 0.2rem 0.3rem;
+    line-height: 1;
+    margin: 0;
 }
 
 .note {
-  background-color: var(--orange-100);
-  max-width: 70ch;
-  padding: 0.2rem 2rem;
-  font-size: var(--step--2);
-  font-style: italic;
-  border-radius: 0.5rem;
-  border-left: 0.4rem solid var(--orange-400);
-  position: relative;
+    background-color: var(--orange-100);
+    max-width: 70ch;
+    padding: 0.2rem 2rem;
+    font-size: var(--step--2);
+    font-style: italic;
+    border-radius: 0.5rem;
+    border-left: 0.4rem solid var(--orange-400);
+    position: relative;
 }
 
 q {
-  quotes: '\201c''\201d';
+    quotes: '\201c''\201d';
 }
 
 .note::before {
-  content: open-quote;
-  font-family: var(--system-fonts-mono);
-  font-size: var(--step-4);
-  position: absolute;
-  left: -0.2rem;
-  top: 0.5rem;
-  color: var(--orange-600);
+    content: open-quote;
+    font-family: var(--system-fonts-mono);
+    font-size: var(--step-4);
+    position: absolute;
+    left: -0.2rem;
+    top: 0.5rem;
+    color: var(--orange-600);
 }
 .note::after {
-  content: close-quote;
-  font-family: var(--system-fonts-mono);
-  font-size: var(--step-4);
-  position: absolute;
-  right: 1.2rem;
-  bottom: -1rem;
-  color: var(--orange-600);
+    content: close-quote;
+    font-family: var(--system-fonts-mono);
+    font-size: var(--step-4);
+    position: absolute;
+    right: 1.2rem;
+    bottom: -1rem;
+    color: var(--orange-600);
 }
 
 .warning {
-  background-color: var(--pink-200);
-  max-width: 70ch;
-  padding: 0.2rem 2rem;
-  font-size: var(--step--2);
-  font-style: italic;
-  border-radius: 0.5rem;
-  border-left: 0.4rem solid var(--pink-800);
-  position: relative;
+    background-color: var(--pink-200);
+    max-width: 70ch;
+    padding: 0.2rem 2rem;
+    font-size: var(--step--2);
+    font-style: italic;
+    border-radius: 0.5rem;
+    border-left: 0.4rem solid var(--pink-800);
+    position: relative;
 }
 
 .warning > p > a {
-  color: var(--gray-800);
+    color: var(--gray-800);
 }
 .warning > p > code {
-  border: var(--pink-800) solid 1px;
+    border: var(--pink-800) solid 1px;
 }
 
 .thanks {
-  --mono: 'MONO' 1;
-  --casl: 'CASL' 1;
-  font-size: var(--step--3);
-  font-family: RecVar;
-  font-variation-settings: var(--mono), var(--casl), var(--crsv), var(--slnt);
+    --mono: 'MONO' 1;
+    --casl: 'CASL' 1;
+    font-size: var(--step--3);
+    font-family: RecVar;
+    font-variation-settings: var(--mono), var(--casl), var(--crsv), var(--slnt);
 }
