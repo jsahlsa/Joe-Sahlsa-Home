@@ -15,3 +15,6 @@ description: 'An app for equitable playing time in kids sports'
 ## {{ description }}
 
 {{ page.date | postDate }} {.page-dates}
+
+<!-- need to add content about how I built it and how to use it, and features for the future -->
+Placeholder
