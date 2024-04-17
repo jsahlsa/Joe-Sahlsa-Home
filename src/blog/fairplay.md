@@ -1,6 +1,8 @@
 ---
 title: Fairplay App
+eleventyExcludeFromCollections: true
 tags:
+    - blog
     - javascript
     - CSS
     - HTML
