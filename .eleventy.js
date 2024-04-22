@@ -128,6 +128,7 @@ module.exports = function (eleventyConfig) {
                         if (filename.endsWith('1.jpeg')) {
                             fs.unlink(`./${outputDir}/${filename}`, (err) => {
                                 if (err) {
+                                    console.error(err);
                                 } else {
                                     console.log('old og images deleted');
                                 }
