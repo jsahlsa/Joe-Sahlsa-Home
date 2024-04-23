@@ -1,8 +1,8 @@
 ---
 title: First post
 tags:
-  - blog
-  - 11ty
+    - blog
+    - 11ty
 date: 2022-06-02
 description: 'A little about how this site came to be'
 ---
@@ -42,10 +42,10 @@ const links = document.links;
 // get each link that is not a part of the page
 // and give it target: '_blank' and a class
 for (let i = 0; i < links.length; i++) {
-  if (links[i].hostname !== window.location.hostname) {
-    links[i].setAttribute('class', 'outside-link');
-    links[i].target = '_blank';
-  }
+    if (links[i].hostname !== window.location.hostname) {
+        links[i].setAttribute('class', 'outside-link');
+        links[i].target = '_blank';
+    }
 }
 ```
 
