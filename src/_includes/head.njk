@@ -1,44 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="description"
-      content="Web development blog. The good, bad, and ugly (mostly bad and ugly)"
-    />
-    <meta
-      name="keywords"
-      content="HTML, CSS, JavaScript, React, 11ty, Next.js"
-    />
+    <meta name="description" content="Web development blog. The good, bad, and ugly (mostly bad and ugly)" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, React, 11ty, Next.js" />
     <meta name="author" content="Joe Sahlstrom" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:title" content="{% if page.url == "/" %}Joe Sahlstrom • Front-end Developer{% else %}{{ title }}{% endif %}" />
     <title>{% if page.url == "/" %}Joe Sahlstrom •
-    Front-end Developer{% else %}{{ title }}{% endif %}</title>
+        Front-end Developer{% else %}{{ title }}{% endif %}</title>
     <meta property="og:url" content={{ page.url }} />
     {%- set siteUrl = page.url | absoluteUrl -%}
     {# create og images #}
-    {% set ogUrl = siteUrl | ogimage %}
-    
+    {% set ogUrl = siteUrl | ogimage(title) %}
+
     {% if ogUrl %}
-    <meta
-      property="og:image"
-      content="https://joesahlsa.dev/img/social-preview-images/{{ title | slugify }}-1.jpeg"
-    />
-    <meta
-      property="og:image:secure_url"
-      content="https://joesahlsa.dev/img/social-preview-images/{{ title | slugify }}-1.jpeg"
-    />
+    <meta property="og:image" content="https://joesahlsa.dev/images/social-preview-images/{{ title | slugify }}.png" />
+    <meta property="og:image:secure_url" content="https://joesahlsa.dev/images/social-preview-images/{{ title | slugify }}.png" />
     {% else %}
-    <meta
-      property="og:image"
-      content="https://joesahlsa.dev/images/og-image.jpg"
-    />
-    <meta
-      property="og:image:secure_url"
-      content="https://joesahlsa.dev/images/og-image.jpg"
-    />
+    <meta property="og:image" content="https://joesahlsa.dev/images/og-image.jpg" />
+    <meta property="og:image:secure_url" content="https://joesahlsa.dev/images/og-image.jpg" />
     {% endif %}
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -47,64 +30,35 @@
     <meta property="twitter:domain" content="joesahlsa.dev" />
     <meta property="twitter:url" content={{ page.url }} />
     <meta name="twitter:title" content="Joe Sahlsa" />
-    <meta
-      name="twitter:description"
-      content="Web development blog. The good, bad, and ugly (mostly bad and ugly)"
-    />
-    <meta
-      name="twitter:image:src"
-      content="https://joesahlsa.dev/images/og-image.jpg"
-    />
+    <meta name="twitter:description" content="Web development blog. The good, bad, and ugly (mostly bad and ugly)" />
+    <meta name="twitter:image:src" content="https://joesahlsa.dev/images/og-image.jpg" />
 
-    <link
-      rel="webmention"
-      href="https://webmention.io/joesahlsa.dev/webmention"
-    />
+    <link rel="webmention" href="https://webmention.io/joesahlsa.dev/webmention" />
     <link rel="pingback" href="https://webmention.io/joesahlsa.dev/xmlrpc" />
     <!-- CSS only -->
 
     <style>
-      html {
-        visibility: hidden;
-        opacity: 0;
-      }
+        html {
+            visibility: hidden;
+            opacity: 0;
+        }
     </style>
     <link rel="icon" type="image/svg+xml" href="/images/logo.svg" />
 
     <link rel="alternate icon" href="/images/favicon.ico" />
-    <link
-      rel="mask-icon"
-      href="/images/safari-pinned-tab.svg"
-      color="#5bbad5"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/images/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/images/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/images/favicon-16x16.png"
-    />
+    <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
     <link rel="manifest" href="/images/site.webmanifest" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/style.css" />
 
     <!-- Grab title from the page data and dump it here -->
     <title>{{ title }}</title>
-  </head>
+</head>
+
 </html>
